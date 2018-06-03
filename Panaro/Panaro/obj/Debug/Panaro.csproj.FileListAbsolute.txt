@@ -195,3 +195,7 @@ C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.cspro
 C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.csproj.CopyComplete
 C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.exe
 C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.pdb
+C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmedcontpag.resources
+C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmrelcontaspagar.resources
+C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmrelfor.resources
+C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmrelpro.resources

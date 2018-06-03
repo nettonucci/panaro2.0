@@ -134,5 +134,26 @@ namespace Panaro
         {
 
         }
+
+        private void aPagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmrelcontaspagar frmcontaspagar = new frmrelcontaspagar();
+            frmcontaspagar.MdiParent = this;
+            frmcontaspagar.Show();
+        }
+
+        private void fornedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmrelfor frmfor = new frmrelfor();
+            frmfor.MdiParent = this;
+            frmfor.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmrelpro frmpro = new frmrelpro();
+            frmpro.MdiParent = this;
+            frmpro.Show();
+        }
     }
 }

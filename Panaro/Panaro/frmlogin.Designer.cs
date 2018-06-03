@@ -75,6 +75,10 @@
             this.txtboxsenha.Name = "txtboxsenha";
             this.txtboxsenha.Size = new System.Drawing.Size(138, 20);
             this.txtboxsenha.TabIndex = 3;
+            this.txtboxsenha.Enter += new System.EventHandler(this.txtboxsenha_Enter);
+            this.txtboxsenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtboxsenha_KeyDown);
+            this.txtboxsenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxsenha_KeyPress);
+            this.txtboxsenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxsenha_KeyUp);
             // 
             // button1
             // 
