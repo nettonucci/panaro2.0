@@ -72,5 +72,27 @@ namespace Panaro.Camadas.DAL
             }
 
         }
+
+        public void Update(Model.Comanda comanda)
+        {
+            SqlConnection conexao = new SqlConnection(strcon);
+            string sql = "Update comandas set status=@status where id=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@status", comanda.status);
+            cmd.Parameters.AddWithValue("@id", comanda.id);
+            conexao.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro na atualizacao de comanda");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

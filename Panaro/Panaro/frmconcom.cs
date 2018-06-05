@@ -23,7 +23,7 @@ namespace Panaro
             Camadas.DAL.Comanda dalCom = new Camadas.DAL.Comanda();
             dgvComanda.DataSource = "";
             dgvComanda.DataSource = dalCom.Select();
-
+            txtboxid.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,12 +36,21 @@ namespace Panaro
             if (dgvComanda.SelectedRows.Count > 0)
             {
                 txtboxCom.Text = dgvComanda.SelectedRows[0].Cells["id_cliente"].Value.ToString();
+                txtboxid.Text = dgvComanda.SelectedRows[0].Cells["id"].Value.ToString();
             }
         }
 
         private void txtboxCom_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmedcom frmcom = new frmedcom(txtboxCom.Text, txtboxid.Text);
+
+            frmcom.Show();
+            this.Close();
         }
     }
 }

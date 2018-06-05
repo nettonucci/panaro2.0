@@ -111,8 +111,8 @@ namespace Panaro
 
                 dalCom.Insert(comanda);
 
-                frmedcom frmcon = new frmedcom();
-                frmcon.Show();
+                frmedcom frmcom = new frmedcom(txtboxcli.Text, txtboxid.Text);
+                frmcom.Show();
                 this.Close();
 
 

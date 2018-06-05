@@ -37,6 +37,7 @@
             this.txtboxCom = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtboxid = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comandasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComanda)).BeginInit();
@@ -90,6 +91,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Editar comanda";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -101,12 +103,20 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtboxid
+            // 
+            this.txtboxid.Location = new System.Drawing.Point(254, 6);
+            this.txtboxid.Name = "txtboxid";
+            this.txtboxid.Size = new System.Drawing.Size(47, 20);
+            this.txtboxid.TabIndex = 5;
+            // 
             // frmconcom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 290);
             this.ControlBox = false;
+            this.Controls.Add(this.txtboxid);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtboxCom);
@@ -134,5 +144,6 @@
         private System.Windows.Forms.TextBox txtboxCom;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtboxid;
     }
 }
