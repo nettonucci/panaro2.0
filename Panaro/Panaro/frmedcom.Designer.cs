@@ -42,12 +42,13 @@
             this.tiposTableAdapter = new Panaro.panaroDataSet4TableAdapters.tiposTableAdapter();
             this.tiposTableAdapter1 = new Panaro.panaroDataSet5TableAdapters.tiposTableAdapter();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvComanda = new System.Windows.Forms.DataGridView();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComanda)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -142,13 +143,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dataGridView1
+            // dgvComanda
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 97);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(495, 241);
-            this.dataGridView1.TabIndex = 13;
+            this.dgvComanda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComanda.Location = new System.Drawing.Point(13, 97);
+            this.dgvComanda.Name = "dgvComanda";
+            this.dgvComanda.Size = new System.Drawing.Size(495, 241);
+            this.dgvComanda.TabIndex = 13;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(145, 38);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(50, 20);
+            this.textBox3.TabIndex = 14;
             // 
             // frmedcom
             // 
@@ -156,7 +165,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 390);
             this.ControlBox = false;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.dgvComanda);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -172,7 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComanda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +203,7 @@
         private System.Windows.Forms.BindingSource tiposBindingSource1;
         private panaroDataSet5TableAdapters.tiposTableAdapter tiposTableAdapter1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvComanda;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

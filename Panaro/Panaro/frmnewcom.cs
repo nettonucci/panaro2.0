@@ -24,7 +24,7 @@ namespace Panaro
             dgvClientes.DataSource = "";
             dgvClientes.DataSource = dalCli.Select();
             rdbtodos_CheckedChanged(null, null);
-
+            txtboxid.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,7 +93,9 @@ namespace Panaro
         {
             if (dgvClientes.SelectedRows.Count > 0)
             {
+                txtboxid.Text = dgvClientes.SelectedRows[0].Cells["id"].Value.ToString();
                 txtboxcli.Text = dgvClientes.SelectedRows[0].Cells["nome"].Value.ToString();
+                
             }
         }
 
@@ -104,7 +106,7 @@ namespace Panaro
                 txtboxcli.Focus();
                 Camadas.Model.Comanda comanda = new Camadas.Model.Comanda();
                 Camadas.DAL.Comanda dalCom = new Camadas.DAL.Comanda();
-                comanda.cliente = txtboxcli.Text;
+                comanda.id_cliente = Convert.ToInt32(txtboxid.Text);
                 comanda.status = "1";
 
                 dalCom.Insert(comanda);

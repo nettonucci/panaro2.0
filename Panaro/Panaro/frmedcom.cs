@@ -33,7 +33,8 @@ namespace Panaro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            //cliente.id = Convert.ToInt32(txtboxId.Text);
+            //cliente.nome = txtboxnome.Text;
         }
 
         private void button2_Click(object sender, EventArgs e)

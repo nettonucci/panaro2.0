@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Panaro.Camadas.DAL
 {
@@ -26,9 +27,12 @@ namespace Panaro.Camadas.DAL
                 {
                     Model.Comanda comanda = new Model.Comanda();
                     comanda.id = Convert.ToInt32(reader["id"]);
-                    comanda.cliente = reader["cliente"].ToString();
                     comanda.status = "Aberta";
+                    comanda.id_cliente = Convert.ToInt32(reader["id_cliente"]);
                     lstComanda.Add(comanda);
+
+                    
+
                 }
             }
             catch
@@ -48,19 +52,19 @@ namespace Panaro.Camadas.DAL
         public void Insert(Model.Comanda comanda)
         {
             SqlConnection conexao = new SqlConnection(strcon);
-            string sql = "Insert into comandas values ";
-            sql = sql + " (@cliente, @status);";
-            SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@cliente", comanda.cliente);
-            cmd.Parameters.AddWithValue("@status", comanda.status);
-            conexao.Open();
             try
             {
+                string sql = "Insert into comandas values ";
+                sql = sql + " (@status, @id_cliente);";
+                SqlCommand cmd = new SqlCommand(sql, conexao);
+                cmd.Parameters.AddWithValue("@status", comanda.status);
+                cmd.Parameters.AddWithValue("@id_cliente", comanda.id_cliente);
+                conexao.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch
+            catch (SqlException ex)
             {
-                Console.WriteLine("Deu Erro ao cadastrar a comanda");
+                Console.WriteLine("Deu Erro ao cadastrar a comanda " + ex);
             }
             finally
             {

@@ -9,7 +9,7 @@ namespace Panaro.Camadas.Model
     public class Comanda
     {
         public int id { get; set; }
-        public string cliente { get; set; }
+        public int id_cliente { get; set; }
         public string status { get; set; }
     }
 }

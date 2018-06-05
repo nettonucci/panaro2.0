@@ -80,6 +80,7 @@
             this.txtboxCom.Name = "txtboxCom";
             this.txtboxCom.Size = new System.Drawing.Size(175, 20);
             this.txtboxCom.TabIndex = 2;
+            this.txtboxCom.TextChanged += new System.EventHandler(this.txtboxCom_TextChanged);
             // 
             // button1
             // 

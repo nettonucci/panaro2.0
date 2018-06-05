@@ -96,6 +96,12 @@
       <DependentUpon>CrystalReportProdutos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReportteste.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportteste.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="frmatest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,10 @@
     <EmbeddedResource Include="CrystalReportProdutos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportProdutos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportteste.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportteste.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="fmrinicio.resx">
       <DependentUpon>fmrinicio.cs</DependentUpon>

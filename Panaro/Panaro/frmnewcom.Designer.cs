@@ -42,6 +42,7 @@
             this.rdbcod = new System.Windows.Forms.RadioButton();
             this.rdbtodos = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtboxid = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.pnlpesquisa.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -187,12 +188,20 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // txtboxid
+            // 
+            this.txtboxid.Location = new System.Drawing.Point(57, 66);
+            this.txtboxid.Name = "txtboxid";
+            this.txtboxid.Size = new System.Drawing.Size(42, 20);
+            this.txtboxid.TabIndex = 8;
+            // 
             // frmnewcom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 414);
             this.ControlBox = false;
+            this.Controls.Add(this.txtboxid);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pnlpesquisa);
             this.Controls.Add(this.txtboxcli);
@@ -230,5 +239,6 @@
         private System.Windows.Forms.RadioButton rdbcod;
         private System.Windows.Forms.RadioButton rdbtodos;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtboxid;
     }
 }
