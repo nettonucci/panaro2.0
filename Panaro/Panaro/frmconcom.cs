@@ -35,7 +35,7 @@ namespace Panaro
         {
             if (dgvComanda.SelectedRows.Count > 0)
             {
-                txtboxCom.Text = dgvComanda.SelectedRows[0].Cells["id_cliente"].Value.ToString();
+                txtboxCom.Text = dgvComanda.SelectedRows[0].Cells["nome"].Value.ToString();
                 txtboxid.Text = dgvComanda.SelectedRows[0].Cells["id"].Value.ToString();
             }
         }

@@ -389,6 +389,7 @@
     <EmbeddedResource Include="teste.resx">
       <DependentUpon>teste.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Camadas\Model\dgvconsulcomanda.cs" />
     <None Include="panaroDataSet.xsc">
       <DependentUpon>panaroDataSet.xsd</DependentUpon>
     </None>

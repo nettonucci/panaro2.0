@@ -13,11 +13,11 @@ namespace Panaro.Camadas.DAL
     {
         private string strcon = Conexao.getConexao();
 
-        public List<Model.Comanda> Select()
+        public List<Model.dgvconsulcomanda> Select()
         {
-            List<Model.Comanda> lstComanda = new List<Model.Comanda>();
+            List<Model.dgvconsulcomanda> lstdgv = new List<Model.dgvconsulcomanda>();
             SqlConnection conexao = new SqlConnection(strcon);
-            string sql = "select * from comandas where status=1;";
+            string sql = "select comandas.id, clientes.nome, comandas.status from comandas inner join clientes on (clientes.id=comandas.id_cliente) where status=1;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             conexao.Open();
             try
@@ -25,11 +25,12 @@ namespace Panaro.Camadas.DAL
                 SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (reader.Read())
                 {
-                    Model.Comanda comanda = new Model.Comanda();
-                    comanda.id = Convert.ToInt32(reader["id"]);
-                    comanda.status = "Aberta";
-                    comanda.id_cliente = Convert.ToInt32(reader["id_cliente"]);
-                    lstComanda.Add(comanda);
+                    Model.dgvconsulcomanda dgvconsulcomanda = new Model.dgvconsulcomanda();
+                    dgvconsulcomanda.id = Convert.ToInt32(reader["id"]);
+                    dgvconsulcomanda.status = "Aberta";
+                    dgvconsulcomanda.nome = reader["nome"].ToString();
+                    lstdgv.Add(dgvconsulcomanda);
+
 
                     
 
@@ -44,7 +45,7 @@ namespace Panaro.Camadas.DAL
                 conexao.Close();
             }
 
-            return lstComanda;
+            return lstdgv;
         }
 
         
