@@ -23,5 +23,10 @@ namespace Panaro
             dgvcaixa.DataSource = "";
             dgvcaixa.DataSource = dalCai.Select();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

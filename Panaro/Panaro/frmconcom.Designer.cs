@@ -29,33 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panaroDataSet8 = new Panaro.panaroDataSet8();
             this.comandasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comandasTableAdapter = new Panaro.panaroDataSet8TableAdapters.comandasTableAdapter();
             this.dgvComanda = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtboxCom = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtboxid = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comandasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComanda)).BeginInit();
             this.SuspendLayout();
             // 
-            // panaroDataSet8
-            // 
-            this.panaroDataSet8.DataSetName = "panaroDataSet8";
-            this.panaroDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // comandasBindingSource
             // 
             this.comandasBindingSource.DataMember = "comandas";
-            this.comandasBindingSource.DataSource = this.panaroDataSet8;
-            // 
-            // comandasTableAdapter
-            // 
-            this.comandasTableAdapter.ClearBeforeFill = true;
             // 
             // dgvComanda
             // 
@@ -125,9 +112,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmconcom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "teste";
+            this.Text = "Consulta de Comanda";
             this.Load += new System.EventHandler(this.teste_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comandasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComanda)).EndInit();
             this.ResumeLayout(false);

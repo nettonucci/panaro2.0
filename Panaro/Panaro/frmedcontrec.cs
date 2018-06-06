@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Panaro
 {
-    public partial class frmcontpag : Form
+    public partial class frmedcontrec : Form
     {
-        public frmcontpag()
+        public frmedcontrec()
         {
             InitializeComponent();
         }

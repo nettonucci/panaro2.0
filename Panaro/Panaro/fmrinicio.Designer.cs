@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmrinicio));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,6 @@
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colsultarProdutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atualizarEstoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtosEmFaltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAreceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +57,9 @@
             this.aPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,8 +152,7 @@
             // 
             this.estoqueToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.colsultarProdutoToolStripMenuItem,
-            this.atualizarEstoqueToolStripMenuItem,
-            this.produtosEmFaltaToolStripMenuItem});
+            this.atualizarEstoqueToolStripMenuItem});
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
             this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.estoqueToolStripMenuItem.Text = "&Estoque";
@@ -170,13 +171,6 @@
             this.atualizarEstoqueToolStripMenuItem.Text = "&Atualizar estoque";
             this.atualizarEstoqueToolStripMenuItem.Click += new System.EventHandler(this.atualizarEstoqueToolStripMenuItem_Click);
             // 
-            // produtosEmFaltaToolStripMenuItem
-            // 
-            this.produtosEmFaltaToolStripMenuItem.Name = "produtosEmFaltaToolStripMenuItem";
-            this.produtosEmFaltaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.produtosEmFaltaToolStripMenuItem.Text = "&Produtos em falta";
-            this.produtosEmFaltaToolStripMenuItem.Click += new System.EventHandler(this.produtosEmFaltaToolStripMenuItem_Click);
-            // 
             // financeiroToolStripMenuItem
             // 
             this.financeiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -191,21 +185,21 @@
             // contasAPagarToolStripMenuItem
             // 
             this.contasAPagarToolStripMenuItem.Name = "contasAPagarToolStripMenuItem";
-            this.contasAPagarToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.contasAPagarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contasAPagarToolStripMenuItem.Text = "Contas a &pagar";
             this.contasAPagarToolStripMenuItem.Click += new System.EventHandler(this.contasAPagarToolStripMenuItem_Click);
             // 
             // contasAreceberToolStripMenuItem
             // 
             this.contasAreceberToolStripMenuItem.Name = "contasAreceberToolStripMenuItem";
-            this.contasAreceberToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.contasAreceberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contasAreceberToolStripMenuItem.Text = "Contas a &receber";
             this.contasAreceberToolStripMenuItem.Click += new System.EventHandler(this.contasAreceberToolStripMenuItem_Click);
             // 
             // caixaToolStripMenuItem1
             // 
             this.caixaToolStripMenuItem1.Name = "caixaToolStripMenuItem1";
-            this.caixaToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
+            this.caixaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.caixaToolStripMenuItem1.Text = "Caixa";
             this.caixaToolStripMenuItem1.Click += new System.EventHandler(this.caixaToolStripMenuItem1_Click);
             // 
@@ -219,7 +213,7 @@
             this.caixaToolStripMenuItem,
             this.contasToolStripMenuItem});
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.relatoriosToolStripMenuItem.Text = "Rela&torios";
             this.relatoriosToolStripMenuItem.Click += new System.EventHandler(this.relatoriosToolStripMenuItem_Click);
             // 
@@ -288,15 +282,29 @@
             this.sairToolStripMenuItem.Text = "&Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // monthCalendar1
             // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.Location = new System.Drawing.Point(618, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(182, 424);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
+            this.monthCalendar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.monthCalendar1.Location = new System.Drawing.Point(573, 24);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 4;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Location = new System.Drawing.Point(0, 429);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(573, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // fmrinicio
             // 
@@ -306,7 +314,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -338,7 +347,6 @@
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem colsultarProdutoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atualizarEstoqueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem produtosEmFaltaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasAPagarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasAreceberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatoriosToolStripMenuItem;
@@ -353,7 +361,9 @@
         private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comandaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

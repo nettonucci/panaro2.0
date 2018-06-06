@@ -89,6 +89,7 @@
             // 
             // txtboxcli
             // 
+            this.txtboxcli.Enabled = false;
             this.txtboxcli.Location = new System.Drawing.Point(57, 28);
             this.txtboxcli.Name = "txtboxcli";
             this.txtboxcli.Size = new System.Drawing.Size(260, 20);

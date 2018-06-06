@@ -19,7 +19,7 @@ namespace Panaro
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace Panaro
 
         private void contasAreceberToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmcontrec frmrec = new frmcontrec();
+            frmnewcontrec frmrec = new frmnewcontrec();
             frmrec.MdiParent = this;
             frmrec.Show();
         }
@@ -175,6 +175,21 @@ namespace Panaro
             frmrelcaixa frmrelcai = new frmrelcaixa();
             frmrelcai.MdiParent = this;
             frmrelcai.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+             label1.Text= DateTime.Now.ToLongTimeString();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
         }
     }
 }

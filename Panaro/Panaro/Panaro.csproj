@@ -152,17 +152,17 @@
     <Compile Include="frmedcom.Designer.cs">
       <DependentUpon>frmedcom.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmcontpag.cs">
+    <Compile Include="frmnewcontrec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmcontpag.Designer.cs">
-      <DependentUpon>frmcontpag.cs</DependentUpon>
+    <Compile Include="frmnewcontrec.Designer.cs">
+      <DependentUpon>frmnewcontrec.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmcontrec.cs">
+    <Compile Include="frmedcontrec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmcontrec.Designer.cs">
-      <DependentUpon>frmcontrec.cs</DependentUpon>
+    <Compile Include="frmedcontrec.Designer.cs">
+      <DependentUpon>frmedcontrec.cs</DependentUpon>
     </Compile>
     <Compile Include="frmlogin.cs">
       <SubType>Form</SubType>
@@ -372,11 +372,11 @@
     <EmbeddedResource Include="frmedcom.resx">
       <DependentUpon>frmedcom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmcontpag.resx">
-      <DependentUpon>frmcontpag.cs</DependentUpon>
+    <EmbeddedResource Include="frmnewcontrec.resx">
+      <DependentUpon>frmnewcontrec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmcontrec.resx">
-      <DependentUpon>frmcontrec.cs</DependentUpon>
+    <EmbeddedResource Include="frmedcontrec.resx">
+      <DependentUpon>frmedcontrec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>

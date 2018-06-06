@@ -1,6 +1,6 @@
 ﻿namespace Panaro
 {
-    partial class frmcontpag
+    partial class frmedcontrec
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // frmcontpag
+            // frmcontrec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 449);
-            this.Name = "frmcontpag";
-            this.Text = "Contas a pagar";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "frmcontrec";
+            this.Text = "Contas a receber";
             this.ResumeLayout(false);
 
         }

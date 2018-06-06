@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Panaro
 {
-    public partial class frmcontrec : Form
+    public partial class frmnewcontrec : Form
     {
-        public frmcontrec()
+        public frmnewcontrec()
         {
             InitializeComponent();
+        }
+
+        private void frmnewcontrec_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
