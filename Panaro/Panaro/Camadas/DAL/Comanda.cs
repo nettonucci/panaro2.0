@@ -56,10 +56,10 @@ namespace Panaro.Camadas.DAL
             try
             {
                 string sql = "Insert into comandas values ";
-                sql = sql + " (@status, @id_cliente);";
+                sql = sql + " (@id_cliente, @status);";
                 SqlCommand cmd = new SqlCommand(sql, conexao);
-                cmd.Parameters.AddWithValue("@status", comanda.status);
                 cmd.Parameters.AddWithValue("@id_cliente", comanda.id_cliente);
+                cmd.Parameters.AddWithValue("@status", comanda.status);
                 conexao.Open();
                 cmd.ExecuteNonQuery();
             }

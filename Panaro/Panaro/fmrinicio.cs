@@ -155,5 +155,26 @@ namespace Panaro
             frmpro.MdiParent = this;
             frmpro.Show();
         }
+
+        private void comandaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmrelcom frmrelcom = new frmrelcom();
+            frmrelcom.MdiParent = this;
+            frmrelcom.Show();
+        }
+
+        private void caixaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmcaixa frmcai = new frmcaixa();
+            frmcai.MdiParent = this;
+            frmcai.Show();
+        }
+
+        private void caixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmrelcaixa frmrelcai = new frmrelcaixa();
+            frmrelcai.MdiParent = this;
+            frmrelcai.Show();
+        }
     }
 }

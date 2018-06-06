@@ -199,3 +199,6 @@ C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmed
 C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmrelcontaspagar.resources
 C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmrelfor.resources
 C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmrelpro.resources
+C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmrelcom.resources
+C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmcaixa.resources
+C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmrelcaixa.resources

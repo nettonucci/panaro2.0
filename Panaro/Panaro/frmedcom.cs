@@ -46,6 +46,7 @@ namespace Panaro
         {
             if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja finalizar a comanda?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
+                txtboxtotal.Text = "R$";
                 decimal total = 0;
 
                 foreach (DataGridViewRow row in dgvcom.Rows)
@@ -62,6 +63,14 @@ namespace Panaro
                 comanda.status = "2";
 
                 dalCom.Update(comanda);
+
+                Camadas.Model.Caixa caixa = new Camadas.Model.Caixa();
+                Camadas.DAL.Caixa dalCai = new Camadas.DAL.Caixa();
+                caixa.cliente = txtboxnome.Text;
+                caixa.data = DateTime.Now;
+                caixa.total = txtboxtotal.Text;
+
+                dalCai.Insert(caixa);
 
 
                 MessageBox.Show("Comanda encerrada com sucesso", "Finalizar comanda", MessageBoxButtons.OK, MessageBoxIcon.Information);
