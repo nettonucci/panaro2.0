@@ -93,6 +93,44 @@ namespace Panaro
                     txtboxsenha.Text = ("");
                     txtboxuser.Focus();
                 }
+
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+        }
+
+        private void txtboxsenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmlogin_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void txtboxuser_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void frmlogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void button1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
             }
         }
     }

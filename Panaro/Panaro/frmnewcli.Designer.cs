@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmnewcli));
             this.btncadastrar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,6 +49,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.rdbsim = new System.Windows.Forms.RadioButton();
+            this.rdbnao = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,7 +145,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 155);
+            this.label4.Location = new System.Drawing.Point(21, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 10;
@@ -149,7 +154,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 129);
+            this.label5.Location = new System.Drawing.Point(11, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 11;
@@ -166,14 +171,14 @@
             // 
             // txtboxtel
             // 
-            this.txtboxtel.Location = new System.Drawing.Point(69, 126);
+            this.txtboxtel.Location = new System.Drawing.Point(69, 156);
             this.txtboxtel.Name = "txtboxtel";
             this.txtboxtel.Size = new System.Drawing.Size(156, 20);
             this.txtboxtel.TabIndex = 5;
             // 
             // txtboxcel
             // 
-            this.txtboxcel.Location = new System.Drawing.Point(69, 152);
+            this.txtboxcel.Location = new System.Drawing.Point(69, 182);
             this.txtboxcel.Name = "txtboxcel";
             this.txtboxcel.Size = new System.Drawing.Size(156, 20);
             this.txtboxcel.TabIndex = 6;
@@ -214,12 +219,54 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 129);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Possui telefone/celular:";
+            // 
+            // rdbsim
+            // 
+            this.rdbsim.AutoSize = true;
+            this.rdbsim.Location = new System.Drawing.Point(139, 127);
+            this.rdbsim.Name = "rdbsim";
+            this.rdbsim.Size = new System.Drawing.Size(42, 17);
+            this.rdbsim.TabIndex = 20;
+            this.rdbsim.TabStop = true;
+            this.rdbsim.Text = "Sim";
+            this.rdbsim.UseVisualStyleBackColor = true;
+            this.rdbsim.CheckedChanged += new System.EventHandler(this.rdbsim_CheckedChanged);
+            // 
+            // rdbnao
+            // 
+            this.rdbnao.AutoSize = true;
+            this.rdbnao.Location = new System.Drawing.Point(188, 127);
+            this.rdbnao.Name = "rdbnao";
+            this.rdbnao.Size = new System.Drawing.Size(45, 17);
+            this.rdbnao.TabIndex = 21;
+            this.rdbnao.TabStop = true;
+            this.rdbnao.Text = "Nao";
+            this.rdbnao.UseVisualStyleBackColor = true;
+            this.rdbnao.CheckedChanged += new System.EventHandler(this.rdbnao_CheckedChanged);
+            // 
             // frmnewcli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 279);
             this.ControlBox = false;
+            this.Controls.Add(this.rdbnao);
+            this.Controls.Add(this.rdbsim);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label7);
@@ -271,5 +318,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton rdbsim;
+        private System.Windows.Forms.RadioButton rdbnao;
     }
 }

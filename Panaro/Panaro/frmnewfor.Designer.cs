@@ -45,7 +45,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btncadastrar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -56,22 +56,21 @@
             this.panaroDataSet1 = new Panaro.panaroDataSet1();
             this.tiposBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tiposTableAdapter1 = new Panaro.panaroDataSet1TableAdapters.tiposTableAdapter();
-            this.tiposBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.panaroDataSet2 = new Panaro.panaroDataSet2();
             this.tiposTableAdapter2 = new Panaro.panaroDataSet2TableAdapters.tiposTableAdapter();
             this.cbboxtipos = new System.Windows.Forms.ComboBox();
-            this.panaroDataSet6 = new Panaro.panaroDataSet6();
             this.tipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panaroDataSet6 = new Panaro.panaroDataSet6();
             this.tipoTableAdapter = new Panaro.panaroDataSet6TableAdapters.tipoTableAdapter();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet6)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -193,15 +192,15 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btncadastrar
             // 
-            this.button1.Location = new System.Drawing.Point(142, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btncadastrar.Location = new System.Drawing.Point(142, 191);
+            this.btncadastrar.Name = "btncadastrar";
+            this.btncadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btncadastrar.TabIndex = 10;
+            this.btncadastrar.Text = "Cadastrar";
+            this.btncadastrar.UseVisualStyleBackColor = true;
+            this.btncadastrar.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -270,11 +269,6 @@
             // 
             this.tiposTableAdapter1.ClearBeforeFill = true;
             // 
-            // tiposBindingSource2
-            // 
-            this.tiposBindingSource2.DataMember = "tipos";
-            this.tiposBindingSource2.DataSource = this.panaroDataSet2;
-            // 
             // panaroDataSet2
             // 
             this.panaroDataSet2.DataSetName = "panaroDataSet2";
@@ -294,19 +288,25 @@
             this.cbboxtipos.Size = new System.Drawing.Size(121, 21);
             this.cbboxtipos.TabIndex = 22;
             // 
-            // panaroDataSet6
-            // 
-            this.panaroDataSet6.DataSetName = "panaroDataSet6";
-            this.panaroDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tipoBindingSource
             // 
             this.tipoBindingSource.DataMember = "tipo";
             this.tipoBindingSource.DataSource = this.panaroDataSet6;
             // 
+            // panaroDataSet6
+            // 
+            this.panaroDataSet6.DataSetName = "panaroDataSet6";
+            this.panaroDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tipoTableAdapter
             // 
             this.tipoTableAdapter.ClearBeforeFill = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmnewfor
             // 
@@ -319,7 +319,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btncadastrar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtboxnumero);
             this.Controls.Add(this.label7);
@@ -343,10 +343,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,7 +368,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btncadastrar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -381,11 +380,11 @@
         private System.Windows.Forms.BindingSource tiposBindingSource1;
         private panaroDataSet1TableAdapters.tiposTableAdapter tiposTableAdapter1;
         private panaroDataSet2 panaroDataSet2;
-        private System.Windows.Forms.BindingSource tiposBindingSource2;
         private panaroDataSet2TableAdapters.tiposTableAdapter tiposTableAdapter2;
         private System.Windows.Forms.ComboBox cbboxtipos;
         private panaroDataSet6 panaroDataSet6;
         private System.Windows.Forms.BindingSource tipoBindingSource;
         private panaroDataSet6TableAdapters.tipoTableAdapter tipoTableAdapter;
+        private System.Windows.Forms.Timer timer1;
     }
 }

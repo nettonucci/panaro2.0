@@ -51,5 +51,17 @@ namespace Panaro
         {
             txtboxnome.Focus();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxsenha.Text == "")
+            {
+                btncadastrar.Enabled = false;
+            }
+            else
+            {
+                btncadastrar.Enabled = true;
+            }
+        }
     }
 }

@@ -113,5 +113,26 @@ namespace Panaro
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxId.Text == "")
+            {
+                btnalterar.Enabled = false;
+            }
+            else
+            {
+                btnalterar.Enabled = true;
+            }
+
+            if (txtboxId.Text == "")
+            {
+                btnexcluir.Enabled = false;
+            }
+            else
+            {
+                btnexcluir.Enabled = true;
+            }
+        }
     }
 }

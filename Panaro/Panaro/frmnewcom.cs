@@ -25,7 +25,10 @@ namespace Panaro
             dgvClientes.DataSource = dalCli.Select();
             rdbtodos_CheckedChanged(null, null);
             txtboxid.Visible = false;
+
+
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -111,11 +114,23 @@ namespace Panaro
 
                 dalCom.Insert(comanda);
 
-                frmedcom frmcom = new frmedcom(txtboxcli.Text, txtboxid.Text);
+                frmconcom frmcom = new frmconcom();
                 frmcom.Show();
                 this.Close();
 
 
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxcli.Text == "")
+            {
+                btnabrir.Enabled = false;
+            }
+            else
+            {
+                btnabrir.Enabled = true;
             }
         }
     }

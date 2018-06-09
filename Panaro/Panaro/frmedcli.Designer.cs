@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmedcli));
             this.label7 = new System.Windows.Forms.Label();
             this.txtboxnum = new System.Windows.Forms.TextBox();
@@ -44,10 +45,12 @@
             this.txtboxbairro = new System.Windows.Forms.TextBox();
             this.txtboxId = new System.Windows.Forms.TextBox();
             this.dgvedcli = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnalterar = new System.Windows.Forms.Button();
+            this.btnexcluir = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvedcli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -175,25 +178,25 @@
             this.dgvedcli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvedcli_CellContentClick);
             this.dgvedcli.DoubleClick += new System.EventHandler(this.dgvedcli_DoubleClick);
             // 
-            // button1
+            // btnalterar
             // 
-            this.button1.Location = new System.Drawing.Point(20, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Alterar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnalterar.Location = new System.Drawing.Point(20, 208);
+            this.btnalterar.Name = "btnalterar";
+            this.btnalterar.Size = new System.Drawing.Size(75, 23);
+            this.btnalterar.TabIndex = 32;
+            this.btnalterar.Text = "Alterar";
+            this.btnalterar.UseVisualStyleBackColor = true;
+            this.btnalterar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnexcluir
             // 
-            this.button2.Location = new System.Drawing.Point(101, 208);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "Excluir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnexcluir.Location = new System.Drawing.Point(101, 208);
+            this.btnexcluir.Name = "btnexcluir";
+            this.btnexcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnexcluir.TabIndex = 33;
+            this.btnexcluir.Text = "Excluir";
+            this.btnexcluir.UseVisualStyleBackColor = true;
+            this.btnexcluir.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -214,16 +217,32 @@
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 242);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(258, 13);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Selecione um cliente abaixo para ediçao ou exclusao";
+            // 
             // frmedcli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 467);
             this.ControlBox = false;
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnexcluir);
+            this.Controls.Add(this.btnalterar);
             this.Controls.Add(this.dgvedcli);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtboxnum);
@@ -268,9 +287,11 @@
         private System.Windows.Forms.TextBox txtboxbairro;
         private System.Windows.Forms.TextBox txtboxId;
         private System.Windows.Forms.DataGridView dgvedcli;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnalterar;
+        private System.Windows.Forms.Button btnexcluir;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label8;
     }
 }

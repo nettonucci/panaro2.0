@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmatest));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +39,7 @@
             this.txtboxqtd = new System.Windows.Forms.TextBox();
             this.txtboxqtda = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnatu = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pnlpesquisa = new System.Windows.Forms.Panel();
             this.btnbuscar = new System.Windows.Forms.Button();
@@ -49,9 +50,11 @@
             this.rdbcod = new System.Windows.Forms.RadioButton();
             this.rdbtodos = new System.Windows.Forms.RadioButton();
             this.dgvprod = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnexcluir = new System.Windows.Forms.Button();
             this.txtboxvalor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlpesquisa.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -124,6 +127,7 @@
             this.txtboxqtda.Name = "txtboxqtda";
             this.txtboxqtda.Size = new System.Drawing.Size(100, 20);
             this.txtboxqtda.TabIndex = 7;
+            this.txtboxqtda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxqtda_KeyUp);
             // 
             // pictureBox1
             // 
@@ -134,15 +138,15 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnatu
             // 
-            this.button1.Location = new System.Drawing.Point(11, 233);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Atualizar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnatu.Location = new System.Drawing.Point(11, 233);
+            this.btnatu.Name = "btnatu";
+            this.btnatu.Size = new System.Drawing.Size(75, 23);
+            this.btnatu.TabIndex = 9;
+            this.btnatu.Text = "Atualizar";
+            this.btnatu.UseVisualStyleBackColor = true;
+            this.btnatu.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -246,15 +250,15 @@
             this.dgvprod.TabIndex = 13;
             this.dgvprod.DoubleClick += new System.EventHandler(this.dgvprod_DoubleClick);
             // 
-            // button4
+            // btnexcluir
             // 
-            this.button4.Location = new System.Drawing.Point(11, 262);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Excluir";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnexcluir.Location = new System.Drawing.Point(11, 262);
+            this.btnexcluir.Name = "btnexcluir";
+            this.btnexcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnexcluir.TabIndex = 14;
+            this.btnexcluir.Text = "Excluir";
+            this.btnexcluir.UseVisualStyleBackColor = true;
+            this.btnexcluir.Click += new System.EventHandler(this.button4_Click);
             // 
             // txtboxvalor
             // 
@@ -272,19 +276,35 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Valor:";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(89, 217);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(263, 13);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Selecione um produto abaixo para ediçao ou exclusao";
+            // 
             // frmatest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 465);
             this.ControlBox = false;
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtboxvalor);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.dgvprod);
             this.Controls.Add(this.pnlpesquisa);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnatu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtboxqtda);
             this.Controls.Add(this.txtboxqtd);
@@ -299,6 +319,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atualizar estoque";
             this.Load += new System.EventHandler(this.frmatest_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmatest_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlpesquisa.ResumeLayout(false);
             this.pnlpesquisa.PerformLayout();
@@ -321,7 +342,7 @@
         private System.Windows.Forms.TextBox txtboxqtd;
         private System.Windows.Forms.TextBox txtboxqtda;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnatu;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel pnlpesquisa;
         private System.Windows.Forms.Button btnbuscar;
@@ -332,8 +353,10 @@
         private System.Windows.Forms.RadioButton rdbcod;
         private System.Windows.Forms.RadioButton rdbtodos;
         private System.Windows.Forms.DataGridView dgvprod;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnexcluir;
         private System.Windows.Forms.TextBox txtboxvalor;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label8;
     }
 }

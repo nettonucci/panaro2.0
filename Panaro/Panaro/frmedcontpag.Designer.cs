@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rbsim = new System.Windows.Forms.RadioButton();
             this.rbnao = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,8 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtboxdesc = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnexcluir = new System.Windows.Forms.Button();
+            this.btnalterar = new System.Windows.Forms.Button();
             this.dgvcontas = new System.Windows.Forms.DataGridView();
             this.pnlpesquisa = new System.Windows.Forms.Panel();
             this.btnbuscar = new System.Windows.Forms.Button();
@@ -50,6 +51,8 @@
             this.rdbcod = new System.Windows.Forms.RadioButton();
             this.rdbtodos = new System.Windows.Forms.RadioButton();
             this.txtboxid = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcontas)).BeginInit();
             this.pnlpesquisa.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -149,25 +152,25 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // button2
+            // btnexcluir
             // 
-            this.button2.Location = new System.Drawing.Point(93, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Excluir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.btnexcluir.Location = new System.Drawing.Point(93, 162);
+            this.btnexcluir.Name = "btnexcluir";
+            this.btnexcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnexcluir.TabIndex = 36;
+            this.btnexcluir.Text = "Excluir";
+            this.btnexcluir.UseVisualStyleBackColor = true;
+            this.btnexcluir.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // button1
+            // btnalterar
             // 
-            this.button1.Location = new System.Drawing.Point(12, 162);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Alterar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnalterar.Location = new System.Drawing.Point(12, 162);
+            this.btnalterar.Name = "btnalterar";
+            this.btnalterar.Size = new System.Drawing.Size(75, 23);
+            this.btnalterar.TabIndex = 35;
+            this.btnalterar.Text = "Alterar";
+            this.btnalterar.UseVisualStyleBackColor = true;
+            this.btnalterar.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // dgvcontas
             // 
@@ -176,6 +179,7 @@
             this.dgvcontas.Name = "dgvcontas";
             this.dgvcontas.Size = new System.Drawing.Size(776, 209);
             this.dgvcontas.TabIndex = 38;
+            this.dgvcontas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcontas_CellContentClick);
             this.dgvcontas.DoubleClick += new System.EventHandler(this.dgvcontas_DoubleClick);
             // 
             // pnlpesquisa
@@ -268,18 +272,34 @@
             this.txtboxid.Size = new System.Drawing.Size(60, 20);
             this.txtboxid.TabIndex = 40;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 213);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(260, 13);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Selecione uma conta abaixo para ediçao ou exclusao";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmedcontpag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtboxid);
             this.Controls.Add(this.pnlpesquisa);
             this.Controls.Add(this.dgvcontas);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnexcluir);
+            this.Controls.Add(this.btnalterar);
             this.Controls.Add(this.rbsim);
             this.Controls.Add(this.rbnao);
             this.Controls.Add(this.label4);
@@ -315,8 +335,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtboxdesc;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnexcluir;
+        private System.Windows.Forms.Button btnalterar;
         private System.Windows.Forms.DataGridView dgvcontas;
         private System.Windows.Forms.Panel pnlpesquisa;
         private System.Windows.Forms.Button btnbuscar;
@@ -327,5 +347,7 @@
         private System.Windows.Forms.RadioButton rdbcod;
         private System.Windows.Forms.RadioButton rdbtodos;
         private System.Windows.Forms.TextBox txtboxid;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Timer timer1;
     }
 }

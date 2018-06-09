@@ -29,7 +29,7 @@ namespace Panaro.Camadas.DAL
                     produto.produto = reader["produto"].ToString();
                     produto.descricao = reader["descricao"].ToString();
                     produto.valor = reader["valor"].ToString();
-                    produto.quantidade = reader["quantidade"].ToString();
+                    produto.quantidade = Convert.ToInt32(reader["quantidade"]);
                     lstProduto.Add(produto);
                 }
             }
@@ -63,7 +63,7 @@ namespace Panaro.Camadas.DAL
                     produto.produto = reader["produto"].ToString();
                     produto.descricao = reader["descricao"].ToString();
                     produto.valor = reader["valor"].ToString();
-                    produto.quantidade = reader["quantidade"].ToString();
+                    produto.quantidade = Convert.ToInt32(reader["quantidade"]);
                     lstProduto.Add(produto);
                 }
             }
@@ -97,7 +97,7 @@ namespace Panaro.Camadas.DAL
                     produto.produto = reader["produto"].ToString();
                     produto.descricao = reader["descricao"].ToString();
                     produto.valor = reader["valor"].ToString();
-                    produto.quantidade = reader["quantidade"].ToString();
+                    produto.quantidade = Convert.ToInt32(reader["quantidade"]);
                     lstProduto.Add(produto);
                 }
             }

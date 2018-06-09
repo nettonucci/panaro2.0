@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmnewconta));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,12 +39,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.rbnao = new System.Windows.Forms.RadioButton();
             this.rbsim = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btncadastrar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dgvcontas = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcontas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -111,6 +113,7 @@
             // rbnao
             // 
             this.rbnao.AutoSize = true;
+            this.rbnao.Checked = true;
             this.rbnao.Location = new System.Drawing.Point(124, 131);
             this.rbnao.Name = "rbnao";
             this.rbnao.Size = new System.Drawing.Size(45, 17);
@@ -126,19 +129,18 @@
             this.rbsim.Name = "rbsim";
             this.rbsim.Size = new System.Drawing.Size(42, 17);
             this.rbsim.TabIndex = 18;
-            this.rbsim.TabStop = true;
             this.rbsim.Text = "Sim";
             this.rbsim.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btncadastrar
             // 
-            this.button1.Location = new System.Drawing.Point(15, 170);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btncadastrar.Location = new System.Drawing.Point(15, 170);
+            this.btncadastrar.Name = "btncadastrar";
+            this.btncadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btncadastrar.TabIndex = 19;
+            this.btncadastrar.Text = "Cadastrar";
+            this.btncadastrar.UseVisualStyleBackColor = true;
+            this.btncadastrar.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -187,6 +189,12 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmnewconta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,7 +206,7 @@
             this.Controls.Add(this.dgvcontas);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btncadastrar);
             this.Controls.Add(this.rbsim);
             this.Controls.Add(this.rbnao);
             this.Controls.Add(this.label4);
@@ -231,11 +239,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton rbnao;
         private System.Windows.Forms.RadioButton rbsim;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btncadastrar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dgvcontas;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Timer timer1;
     }
 }

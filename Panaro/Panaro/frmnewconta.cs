@@ -88,5 +88,17 @@ namespace Panaro
             frmconta.Show();
             this.Close();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxvalor.Text == "")
+            {
+                btncadastrar.Enabled = false;
+            }
+            else
+            {
+                btncadastrar.Enabled = true;
+            }
+        }
     }
 }

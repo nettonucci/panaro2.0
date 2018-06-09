@@ -51,7 +51,7 @@ namespace Panaro
                 Camadas.DAL.Produtos dalPro = new Camadas.DAL.Produtos();
 
                 produto.id = Convert.ToInt32(txtboxid.Text);
-                produto.quantidade = txtboxqtda.Text;
+                produto.quantidade = Convert.ToInt32(txtboxqtda.Text);
                 produto.valor = txtboxvalor.Text;
 
                 dalPro.Update(produto);
@@ -136,6 +136,43 @@ namespace Panaro
             txtPesquisa.Visible = true;
             btnbuscar.Visible = true;
             txtPesquisa.Focus();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxid.Text == "")
+            {
+                btnatu.Enabled = false;
+            }
+            else
+            {
+                btnatu.Enabled = true;
+            }
+
+            if (txtboxid.Text == "")
+            {
+                btnexcluir.Enabled = false;
+            }
+            else
+            {
+                btnexcluir.Enabled = true;
+            }
+        }
+
+        private void frmatest_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void txtboxqtda_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

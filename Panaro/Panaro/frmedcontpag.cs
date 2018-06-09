@@ -166,5 +166,31 @@ namespace Panaro
             dgvcontas.DataSource = "";
             dgvcontas.DataSource = bllContaspagar.Select();
         }
+
+        private void dgvcontas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxid.Text == "")
+            {
+                btnalterar.Enabled = false;
+            }
+            else
+            {
+                btnalterar.Enabled = true;
+            }
+
+            if (txtboxid.Text == "")
+            {
+                btnexcluir.Enabled = false;
+            }
+            else
+            {
+                btnexcluir.Enabled = true;
+            }
+        }
     }
 }

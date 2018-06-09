@@ -20,6 +20,7 @@ namespace Panaro
         private void frmnewpro_Load(object sender, EventArgs e)
         {
             txtboxdesc.Focus();
+            txtboxqtd.Text = "0";
             // TODO: esta linha de código carrega dados na tabela 'panaroDataSet7.tipo'. Você pode movê-la ou removê-la conforme necessário.
             this.tipoTableAdapter.Fill(this.panaroDataSet7.tipo);
             // TODO: esta linha de código carrega dados na tabela 'panaroDataSet3.tipos'. Você pode movê-la ou removê-la conforme necessário.
@@ -61,7 +62,7 @@ namespace Panaro
                 produto.produto = cbbprod.Text;
                 produto.descricao = txtboxdesc.Text;
                 produto.valor = txtboxvalor.Text;
-                produto.quantidade = txtboxqtd.Text;
+                produto.quantidade = Convert.ToInt32(txtboxqtd.Text);
 
                 dalPro.Insert(produto);
                 MessageBox.Show("Produto cadastrado com sucesso", "Cadastro de produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -84,6 +85,19 @@ namespace Panaro
             txtboxdesc.Text = ("");
             txtboxvalor.Text = ("");
             txtboxqtd.Text = ("");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxdesc.Text == "")
+            {
+                btncadastrar.Enabled = false;
+            }
+            else
+            {
+                btncadastrar.Enabled = true;
+            }
+
         }
     }
 }

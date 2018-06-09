@@ -57,17 +57,23 @@ namespace Panaro
 
         private void button2_Click(object sender, EventArgs e)
         {
-            txtboxnome.Text = (" ");
-            txtboxend.Text = (" ");
-            txtboxnum.Text = (" ");
-            txtboxbairro.Text = (" ");
-            txtboxtel.Text = (" ");
-            txtboxcel.Text = (" ");
+            if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja limpar todos os campos?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                txtboxnome.Focus();
+                txtboxnome.Text = ("");
+                txtboxend.Text = ("");
+                txtboxnum.Text = ("");
+                txtboxbairro.Text = ("");
+                txtboxtel.Text = ("");
+                txtboxcel.Text = ("");
+                rdbsim.Checked = true;
+                
+            }
         }
 
         private void frmnewcli_Load(object sender, EventArgs e)
         {
-
+            rdbsim.Checked = true;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -75,6 +81,35 @@ namespace Panaro
             frmedcli frmedc = new frmedcli();
             frmedc.Show();
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxcel.Text == "" & txtboxtel.Text == "")
+            {
+                btncadastrar.Enabled = false;
+            }
+            else
+            {
+                btncadastrar.Enabled = true;
+            } 
+            if(rdbnao.Checked == true)
+            {
+                btncadastrar.Enabled = true;
+            }
+
+        }
+
+        private void rdbsim_CheckedChanged(object sender, EventArgs e)
+        {
+            txtboxtel.Enabled = true;
+            txtboxcel.Enabled = true;
+        }
+
+        private void rdbnao_CheckedChanged(object sender, EventArgs e)
+        {
+            txtboxtel.Enabled = false;
+            txtboxcel.Enabled = false;
         }
     }
 }

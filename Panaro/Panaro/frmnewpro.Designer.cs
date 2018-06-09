@@ -43,7 +43,7 @@
             this.panaroDataSet = new Panaro.panaroDataSet();
             this.tiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tiposTableAdapter = new Panaro.panaroDataSetTableAdapters.tiposTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btncadastrar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -54,6 +54,7 @@
             this.tipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panaroDataSet7 = new Panaro.panaroDataSet7();
             this.tipoTableAdapter = new Panaro.panaroDataSet7TableAdapters.tipoTableAdapter();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).BeginInit();
@@ -161,15 +162,15 @@
             // 
             this.tiposTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
+            // btncadastrar
             // 
-            this.button1.Location = new System.Drawing.Point(140, 195);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btncadastrar.Location = new System.Drawing.Point(140, 195);
+            this.btncadastrar.Name = "btncadastrar";
+            this.btncadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btncadastrar.TabIndex = 4;
+            this.btncadastrar.Text = "Cadastrar";
+            this.btncadastrar.UseVisualStyleBackColor = true;
+            this.btncadastrar.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -240,6 +241,12 @@
             // 
             this.tipoTableAdapter.ClearBeforeFill = true;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmnewpro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +257,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btncadastrar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.txtboxdesc);
@@ -293,7 +300,7 @@
         private panaroDataSet panaroDataSet;
         private System.Windows.Forms.BindingSource tiposBindingSource;
         private panaroDataSetTableAdapters.tiposTableAdapter tiposTableAdapter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btncadastrar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -304,5 +311,6 @@
         private panaroDataSet7 panaroDataSet7;
         private System.Windows.Forms.BindingSource tipoBindingSource;
         private panaroDataSet7TableAdapters.tipoTableAdapter tipoTableAdapter;
+        private System.Windows.Forms.Timer timer1;
     }
 }

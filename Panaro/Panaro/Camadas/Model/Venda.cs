@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Panaro.Camadas.Model
 {
-    public class Produtos
+    public class Venda
     {
         public int id { get; set; }
-        public string produto { get; set; }
-        public string descricao { get; set; }
+        public int id_comanda { get; set; }
+        public int id_produto { get; set; }
         public string valor { get; set; }
-        public int quantidade { get; set; }
     }
 }

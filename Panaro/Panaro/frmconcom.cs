@@ -52,5 +52,17 @@ namespace Panaro
             frmcom.Show();
             this.Close();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxCom.Text == "")
+            {
+                btneditar.Enabled = false;
+            }
+            else
+            {
+                btneditar.Enabled = true;
+            }
+        }
     }
 }

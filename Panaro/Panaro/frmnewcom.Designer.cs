@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,8 +42,10 @@
             this.rdbnome = new System.Windows.Forms.RadioButton();
             this.rdbcod = new System.Windows.Forms.RadioButton();
             this.rdbtodos = new System.Windows.Forms.RadioButton();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnabrir = new System.Windows.Forms.Button();
             this.txtboxid = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.pnlpesquisa.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -179,15 +182,15 @@
             this.rdbtodos.UseVisualStyleBackColor = true;
             this.rdbtodos.CheckedChanged += new System.EventHandler(this.rdbtodos_CheckedChanged);
             // 
-            // button3
+            // btnabrir
             // 
-            this.button3.Location = new System.Drawing.Point(323, 28);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Abrir comanda";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnabrir.Location = new System.Drawing.Point(323, 28);
+            this.btnabrir.Name = "btnabrir";
+            this.btnabrir.Size = new System.Drawing.Size(106, 23);
+            this.btnabrir.TabIndex = 7;
+            this.btnabrir.Text = "Abrir comanda";
+            this.btnabrir.UseVisualStyleBackColor = true;
+            this.btnabrir.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtboxid
             // 
@@ -196,14 +199,30 @@
             this.txtboxid.Size = new System.Drawing.Size(42, 20);
             this.txtboxid.TabIndex = 8;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 193);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(283, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Selecione abaixo um cliente para abrir uma nova comanda";
+            // 
             // frmnewcom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 414);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtboxid);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnabrir);
             this.Controls.Add(this.pnlpesquisa);
             this.Controls.Add(this.txtboxcli);
             this.Controls.Add(this.label1);
@@ -239,7 +258,9 @@
         private System.Windows.Forms.RadioButton rdbnome;
         private System.Windows.Forms.RadioButton rdbcod;
         private System.Windows.Forms.RadioButton rdbtodos;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnabrir;
         private System.Windows.Forms.TextBox txtboxid;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -33,10 +33,24 @@ namespace Panaro
 
         private void frmconsulta_Load(object sender, EventArgs e)
         {
+            rdbnao.Checked = true;
+            // TODO: esta linha de código carrega dados na tabela 'panaroDataSet11.produtos'. Você pode movê-la ou removê-la conforme necessário.
+            this.produtosTableAdapter2.Fill(this.panaroDataSet11.produtos);
+            Camadas.BLL.Venda bllVen = new Camadas.BLL.Venda();
+            List<Camadas.Model.Venda> lstVenda = new List<Camadas.Model.Venda>();
+
+            
+                lstVenda = bllVen.SelectById(Convert.ToInt32(txtboxid.Text));
+
+
+            dgvcom.DataSource = "";
+            dgvcom.DataSource = lstVenda;
+            // TODO: esta linha de código carrega dados na tabela 'panaroDataSet10.produtos'. Você pode movê-la ou removê-la conforme necessário.
+            this.produtosTableAdapter1.Fill(this.panaroDataSet10.produtos);
             txtboxtotal.Text = "R$";
             Camadas.DAL.Produtos dalPro = new Camadas.DAL.Produtos();
-            dgvcom.DataSource = "";
-            dgvcom.DataSource = dalPro.Select();
+            //dgvcom.DataSource = "";
+            //dgvcom.DataSource = dalPro.Select();
 
 
 
@@ -97,6 +111,7 @@ namespace Panaro
         private void button3_Click(object sender, EventArgs e)
         {
             decimal total = 0;
+            txtboxtotal.Text = "R$";
 
             foreach (DataGridViewRow row in dgvcom.Rows)
             {
@@ -109,6 +124,122 @@ namespace Panaro
         private void dgvcom_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgvprod_DoubleClick(object sender, EventArgs e)
+        {
+            txtboxprodid.Text = dgvprod.SelectedRows[0].Cells["id"].Value.ToString();
+            txtboxproddesc.Text = dgvprod.SelectedRows[0].Cells["descricao"].Value.ToString();
+            txtboxprodvalor.Text = dgvprod.SelectedRows[0].Cells["valor"].Value.ToString();
+            txtboxprodqtd.Text = dgvprod.SelectedRows[0].Cells["quantidade"].Value.ToString();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Camadas.Model.Venda venda = new Camadas.Model.Venda();
+            Camadas.DAL.Venda dalVen = new Camadas.DAL.Venda();
+
+            venda.id = Convert.ToInt32(txtboxcomid.Text);
+
+            dalVen.Delete(venda);
+
+            txtboxcomid.Text = ("");
+            txtboxcomdesc.Text = ("");
+            txtboxcomvalor.Text = ("");
+            Camadas.BLL.Venda bllVen = new Camadas.BLL.Venda();
+            List<Camadas.Model.Venda> lstVenda = new List<Camadas.Model.Venda>();
+
+
+            lstVenda = bllVen.SelectById(Convert.ToInt32(txtboxid.Text));
+
+
+            dgvcom.DataSource = "";
+            dgvcom.DataSource = lstVenda;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Camadas.Model.Venda venda = new Camadas.Model.Venda();
+            Camadas.DAL.Venda dalVen = new Camadas.DAL.Venda();
+            venda.id_produto = Convert.ToInt32(txtboxprodid.Text);
+            venda.id_comanda = Convert.ToInt32(txtboxid.Text);
+            venda.valor = txtboxprodvalor.Text;
+
+            dalVen.Insert(venda);
+
+            //Camadas.Model.Produtos produto = new Camadas.Model.Produtos();
+            //Camadas.DAL.Produtos dalPro = new Camadas.DAL.Produtos();
+
+            //int soma = Convert.ToInt32(txtboxprodqtd.Text);
+            //soma = soma - 1;
+            //produto.quantidade = soma;
+            //dalPro.Update(produto);
+
+            txtboxprodid.Text = ("");
+            txtboxproddesc.Text = ("");
+            txtboxprodvalor.Text = ("");
+            rdbnao.Checked = true;
+            dgvcom.DataSource = "";
+            Camadas.BLL.Venda bllVen = new Camadas.BLL.Venda();
+            List<Camadas.Model.Venda> lstVenda = new List<Camadas.Model.Venda>();
+
+
+            lstVenda = bllVen.SelectById(Convert.ToInt32(txtboxid.Text));
+
+
+            dgvcom.DataSource = "";
+            dgvcom.DataSource = lstVenda;
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtboxprodvalor.Text == "")
+            {
+                btnadd.Enabled = false;
+            }
+            else
+            {
+                btnadd.Enabled = true;
+            }
+
+            if (txtboxcomid.Text == "")
+            {
+                btnrem.Enabled = false;
+            }
+            else
+            {
+                btnrem.Enabled = true;
+            }
+        }
+
+        private void dgvcom_DoubleClick(object sender, EventArgs e)
+        {
+            txtboxcomid.Text = dgvcom.SelectedRows[0].Cells["id"].Value.ToString();
+            txtboxcomdesc.Text = dgvcom.SelectedRows[0].Cells["id_produto"].Value.ToString();
+            txtboxcomvalor.Text = dgvcom.SelectedRows[0].Cells["valor"].Value.ToString();
+        }
+
+        private void rdbnao_CheckedChanged(object sender, EventArgs e)
+        {
+            txtboxproddesc.Text = "";
+            txtboxprodid.Text = "";
+            txtboxprodid.Enabled = false;
+            txtboxproddesc.Enabled = false;
+            txtboxprodvalor.Enabled = false;
+        }
+
+        private void rdbsim_CheckedChanged(object sender, EventArgs e)
+        {
+            txtboxprodvalor.Text = "";
+            txtboxprodid.Text = "0";
+            txtboxproddesc.Text = "0";
+            txtboxprodvalor.Enabled = true;
         }
     }
 }

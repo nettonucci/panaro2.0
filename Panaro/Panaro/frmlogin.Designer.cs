@@ -68,6 +68,7 @@
             this.txtboxuser.Name = "txtboxuser";
             this.txtboxuser.Size = new System.Drawing.Size(138, 20);
             this.txtboxuser.TabIndex = 2;
+            this.txtboxuser.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxuser_KeyUp);
             // 
             // txtboxsenha
             // 
@@ -75,6 +76,7 @@
             this.txtboxsenha.Name = "txtboxsenha";
             this.txtboxsenha.Size = new System.Drawing.Size(138, 20);
             this.txtboxsenha.TabIndex = 3;
+            this.txtboxsenha.TextChanged += new System.EventHandler(this.txtboxsenha_TextChanged);
             this.txtboxsenha.Enter += new System.EventHandler(this.txtboxsenha_Enter);
             this.txtboxsenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtboxsenha_KeyDown);
             this.txtboxsenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxsenha_KeyPress);
@@ -90,6 +92,7 @@
             this.button1.Text = "Logar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.button1_KeyUp);
             // 
             // button2
             // 
@@ -150,6 +153,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmlogin_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmlogin_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmlogin_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
