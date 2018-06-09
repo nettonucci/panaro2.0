@@ -48,7 +48,7 @@ namespace Panaro.Camadas.DAL
         {
             List<Model.Venda> lstVenda = new List<Model.Venda>();
             SqlConnection conexao = new SqlConnection(strcon);
-            string sql = "select * from comanda_produto where id_comanda=@id_comanda;";
+            string sql = "select comanda_produto.id, comanda_produto.id_comanda, comanda_produto.id_produto, produtos.descricao, comanda_produto.valor from comanda_produto inner join produtos on (produtos.id=comanda_produto.id_produto) where id_comanda=@id_comanda;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_comanda", id_comanda);
             conexao.Open();
@@ -61,6 +61,7 @@ namespace Panaro.Camadas.DAL
                     venda.id = Convert.ToInt32(reader["id"]);
                     venda.id_comanda = Convert.ToInt32(reader["id_comanda"]);
                     venda.id_produto = Convert.ToInt32(reader["id_produto"]);
+                    venda.descricao = reader["descricao"].ToString();
                     venda.valor = reader["valor"].ToString();
                     lstVenda.Add(venda);
                 }

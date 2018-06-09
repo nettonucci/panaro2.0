@@ -48,6 +48,12 @@
             this.produtosTableAdapter = new Panaro.panaroDataSet9TableAdapters.produtosTableAdapter();
             this.button3 = new System.Windows.Forms.Button();
             this.dgvprod = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.panaroDataSet11 = new Panaro.panaroDataSet11();
             this.produtosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panaroDataSet10 = new Panaro.panaroDataSet10();
             this.produtosTableAdapter1 = new Panaro.panaroDataSet10TableAdapters.produtosTableAdapter();
@@ -73,21 +79,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtboxcomdesc = new System.Windows.Forms.TextBox();
+            this.txtnada = new System.Windows.Forms.TextBox();
             this.txtboxcomid = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txtboxprodqtd = new System.Windows.Forms.TextBox();
-            this.panaroDataSet11 = new Panaro.panaroDataSet11();
-            this.produtosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.produtosTableAdapter2 = new Panaro.panaroDataSet11TableAdapters.produtosTableAdapter();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.rdbsim = new System.Windows.Forms.RadioButton();
             this.rdbnao = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtboxcomdesc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).BeginInit();
@@ -95,13 +96,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvprod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcom)).BeginInit();
             this.pnlpesquisa.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -247,6 +248,41 @@
             this.dgvprod.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcom_CellContentClick);
             this.dgvprod.DoubleClick += new System.EventHandler(this.dgvprod_DoubleClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // descricao
+            // 
+            this.descricao.DataPropertyName = "descricao";
+            this.descricao.HeaderText = "descricao";
+            this.descricao.Name = "descricao";
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "valor";
+            this.valor.HeaderText = "valor";
+            this.valor.Name = "valor";
+            // 
+            // quantidade
+            // 
+            this.quantidade.DataPropertyName = "quantidade";
+            this.quantidade.HeaderText = "quantidade";
+            this.quantidade.Name = "quantidade";
+            // 
+            // produtosBindingSource2
+            // 
+            this.produtosBindingSource2.DataMember = "produtos";
+            this.produtosBindingSource2.DataSource = this.panaroDataSet11;
+            // 
+            // panaroDataSet11
+            // 
+            this.panaroDataSet11.DataSetName = "panaroDataSet11";
+            this.panaroDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // produtosBindingSource1
             // 
             this.produtosBindingSource1.DataMember = "produtos";
@@ -268,6 +304,7 @@
             this.dgvcom.Name = "dgvcom";
             this.dgvcom.Size = new System.Drawing.Size(444, 260);
             this.dgvcom.TabIndex = 17;
+            this.dgvcom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcom_CellContentClick_1);
             this.dgvcom.DoubleClick += new System.EventHandler(this.dgvcom_DoubleClick);
             // 
             // btnrem
@@ -465,13 +502,13 @@
             this.label10.TabIndex = 30;
             this.label10.Text = "Id:";
             // 
-            // txtboxcomdesc
+            // txtnada
             // 
-            this.txtboxcomdesc.Enabled = false;
-            this.txtboxcomdesc.Location = new System.Drawing.Point(535, 435);
-            this.txtboxcomdesc.Name = "txtboxcomdesc";
-            this.txtboxcomdesc.Size = new System.Drawing.Size(178, 20);
-            this.txtboxcomdesc.TabIndex = 29;
+            this.txtnada.Enabled = false;
+            this.txtnada.Location = new System.Drawing.Point(535, 435);
+            this.txtnada.Name = "txtnada";
+            this.txtnada.Size = new System.Drawing.Size(178, 20);
+            this.txtnada.TabIndex = 29;
             // 
             // txtboxcomid
             // 
@@ -496,44 +533,9 @@
             this.txtboxprodqtd.TabIndex = 34;
             this.txtboxprodqtd.Visible = false;
             // 
-            // panaroDataSet11
-            // 
-            this.panaroDataSet11.DataSetName = "panaroDataSet11";
-            this.panaroDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // produtosBindingSource2
-            // 
-            this.produtosBindingSource2.DataMember = "produtos";
-            this.produtosBindingSource2.DataSource = this.panaroDataSet11;
-            // 
             // produtosTableAdapter2
             // 
             this.produtosTableAdapter2.ClearBeforeFill = true;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // descricao
-            // 
-            this.descricao.DataPropertyName = "descricao";
-            this.descricao.HeaderText = "descricao";
-            this.descricao.Name = "descricao";
-            // 
-            // valor
-            // 
-            this.valor.DataPropertyName = "valor";
-            this.valor.HeaderText = "valor";
-            this.valor.Name = "valor";
-            // 
-            // quantidade
-            // 
-            this.quantidade.DataPropertyName = "quantidade";
-            this.quantidade.HeaderText = "quantidade";
-            this.quantidade.Name = "quantidade";
             // 
             // label11
             // 
@@ -579,19 +581,29 @@
             this.panel1.Size = new System.Drawing.Size(215, 31);
             this.panel1.TabIndex = 38;
             // 
+            // txtboxcomdesc
+            // 
+            this.txtboxcomdesc.Enabled = false;
+            this.txtboxcomdesc.Location = new System.Drawing.Point(535, 503);
+            this.txtboxcomdesc.Name = "txtboxcomdesc";
+            this.txtboxcomdesc.Size = new System.Drawing.Size(178, 20);
+            this.txtboxcomdesc.TabIndex = 39;
+            this.txtboxcomdesc.Visible = false;
+            // 
             // frmedcom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 683);
             this.ControlBox = false;
+            this.Controls.Add(this.txtboxcomdesc);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtboxprodqtd);
             this.Controls.Add(this.txtboxcomvalor);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtboxcomdesc);
+            this.Controls.Add(this.txtnada);
             this.Controls.Add(this.txtboxcomid);
             this.Controls.Add(this.btnadd);
             this.Controls.Add(this.pnlpesquisa);
@@ -625,6 +637,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvprod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcom)).EndInit();
@@ -632,8 +646,6 @@
             this.pnlpesquisa.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -687,7 +699,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtboxcomdesc;
+        private System.Windows.Forms.TextBox txtnada;
         private System.Windows.Forms.TextBox txtboxcomid;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtboxprodqtd;
@@ -702,5 +714,6 @@
         private System.Windows.Forms.RadioButton rdbsim;
         private System.Windows.Forms.RadioButton rdbnao;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtboxcomdesc;
     }
 }

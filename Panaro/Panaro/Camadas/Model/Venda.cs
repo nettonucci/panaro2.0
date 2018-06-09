@@ -11,6 +11,8 @@ namespace Panaro.Camadas.Model
         public int id { get; set; }
         public int id_comanda { get; set; }
         public int id_produto { get; set; }
+        public string descricao { get; set; }
         public string valor { get; set; }
+        
     }
 }

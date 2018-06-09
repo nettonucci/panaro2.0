@@ -33,6 +33,16 @@ namespace Panaro
 
         private void frmconsulta_Load(object sender, EventArgs e)
         {
+            decimal total = 0;
+            txtboxtotal.Text = "R$";
+
+            foreach (DataGridViewRow row in dgvcom.Rows)
+            {
+                total += Convert.ToDecimal(row.Cells["valor"].Value);
+            }
+
+            txtboxtotal.Text += Convert.ToString(total);
+
             rdbnao.Checked = true;
             // TODO: esta linha de código carrega dados na tabela 'panaroDataSet11.produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter2.Fill(this.panaroDataSet11.produtos);
@@ -149,7 +159,7 @@ namespace Panaro
             dalVen.Delete(venda);
 
             txtboxcomid.Text = ("");
-            txtboxcomdesc.Text = ("");
+            txtnada.Text = ("");
             txtboxcomvalor.Text = ("");
             Camadas.BLL.Venda bllVen = new Camadas.BLL.Venda();
             List<Camadas.Model.Venda> lstVenda = new List<Camadas.Model.Venda>();
@@ -160,6 +170,16 @@ namespace Panaro
 
             dgvcom.DataSource = "";
             dgvcom.DataSource = lstVenda;
+
+            decimal total = 0;
+            txtboxtotal.Text = "R$";
+
+            foreach (DataGridViewRow row in dgvcom.Rows)
+            {
+                total += Convert.ToDecimal(row.Cells["valor"].Value);
+            }
+
+            txtboxtotal.Text += Convert.ToString(total);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -195,6 +215,16 @@ namespace Panaro
             dgvcom.DataSource = "";
             dgvcom.DataSource = lstVenda;
 
+            decimal total = 0;
+            txtboxtotal.Text = "R$";
+
+            foreach (DataGridViewRow row in dgvcom.Rows)
+            {
+                total += Convert.ToDecimal(row.Cells["valor"].Value);
+            }
+
+            txtboxtotal.Text += Convert.ToString(total);
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -223,10 +253,12 @@ namespace Panaro
             txtboxcomid.Text = dgvcom.SelectedRows[0].Cells["id"].Value.ToString();
             txtboxcomdesc.Text = dgvcom.SelectedRows[0].Cells["id_produto"].Value.ToString();
             txtboxcomvalor.Text = dgvcom.SelectedRows[0].Cells["valor"].Value.ToString();
+            txtnada.Text = dgvcom.SelectedRows[0].Cells["descricao"].Value.ToString();
         }
 
         private void rdbnao_CheckedChanged(object sender, EventArgs e)
         {
+            dgvprod.Enabled = true;
             txtboxproddesc.Text = "";
             txtboxprodid.Text = "";
             txtboxprodid.Enabled = false;
@@ -236,10 +268,16 @@ namespace Panaro
 
         private void rdbsim_CheckedChanged(object sender, EventArgs e)
         {
+            dgvprod.Enabled = false;
             txtboxprodvalor.Text = "";
             txtboxprodid.Text = "0";
             txtboxproddesc.Text = "0";
             txtboxprodvalor.Enabled = true;
+        }
+
+        private void dgvcom_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
