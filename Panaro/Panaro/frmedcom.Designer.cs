@@ -531,7 +531,6 @@
             this.txtboxprodqtd.Name = "txtboxprodqtd";
             this.txtboxprodqtd.Size = new System.Drawing.Size(84, 20);
             this.txtboxprodqtd.TabIndex = 34;
-            this.txtboxprodqtd.Visible = false;
             // 
             // produtosTableAdapter2
             // 

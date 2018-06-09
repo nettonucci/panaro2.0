@@ -197,14 +197,18 @@ namespace Panaro
 
             int soma = Convert.ToInt32(txtboxprodqtd.Text);
             soma --;
-            //txtboxprodqtd.Text = ;
+            txtboxprodqtd.Text = Convert.ToString(soma);
             produto.id  = Convert.ToInt32(txtboxprodid.Text);
-            produto.quantidade = soma;
+            produto.quantidade = Convert.ToInt32(txtboxprodqtd.Text);
+            produto.valor = txtboxprodvalor.Text;
             dalPro.Update(produto);
+
+            dgvprod.DataSource = "";
 
             txtboxprodid.Text = ("");
             txtboxproddesc.Text = ("");
             txtboxprodvalor.Text = ("");
+            txtboxprodqtd.Text = ("");
             rdbnao.Checked = true;
             dgvcom.DataSource = "";
             Camadas.BLL.Venda bllVen = new Camadas.BLL.Venda();
