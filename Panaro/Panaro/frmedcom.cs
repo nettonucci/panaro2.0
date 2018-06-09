@@ -192,13 +192,15 @@ namespace Panaro
 
             dalVen.Insert(venda);
 
-            //Camadas.Model.Produtos produto = new Camadas.Model.Produtos();
-            //Camadas.DAL.Produtos dalPro = new Camadas.DAL.Produtos();
+            Camadas.Model.Produtos produto = new Camadas.Model.Produtos();
+            Camadas.DAL.Produtos dalPro = new Camadas.DAL.Produtos();
 
-            //int soma = Convert.ToInt32(txtboxprodqtd.Text);
-            //soma = soma - 1;
-            //produto.quantidade = soma;
-            //dalPro.Update(produto);
+            int soma = Convert.ToInt32(txtboxprodqtd.Text);
+            soma --;
+            //txtboxprodqtd.Text = ;
+            produto.id  = Convert.ToInt32(txtboxprodid.Text);
+            produto.quantidade = soma;
+            dalPro.Update(produto);
 
             txtboxprodid.Text = ("");
             txtboxproddesc.Text = ("");
