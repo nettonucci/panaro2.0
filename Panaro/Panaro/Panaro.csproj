@@ -283,6 +283,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>panaroDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="panaroDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaroDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="panaroDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaroDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="panaroDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaroDataSet14.xsd</DependentUpon>
+    </Compile>
     <Compile Include="panaroDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -495,6 +510,39 @@
     </None>
     <None Include="panaroDataSet11.xss">
       <DependentUpon>panaroDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="panaroDataSet12.xsc">
+      <DependentUpon>panaroDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="panaroDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaroDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaroDataSet12.xss">
+      <DependentUpon>panaroDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="panaroDataSet13.xsc">
+      <DependentUpon>panaroDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="panaroDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaroDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaroDataSet13.xss">
+      <DependentUpon>panaroDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="panaroDataSet14.xsc">
+      <DependentUpon>panaroDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="panaroDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaroDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaroDataSet14.xss">
+      <DependentUpon>panaroDataSet14.xsd</DependentUpon>
     </None>
     <None Include="panaroDataSet2.xsc">
       <DependentUpon>panaroDataSet2.xsd</DependentUpon>

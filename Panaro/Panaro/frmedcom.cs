@@ -33,6 +33,8 @@ namespace Panaro
 
         private void frmconsulta_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'panaroDataSet14.comanda_produto'. Você pode movê-la ou removê-la conforme necessário.
+            this.comanda_produtoTableAdapter.Fill(this.panaroDataSet14.comanda_produto);
             decimal total = 0;
             txtboxtotal.Text = "R$";
 
@@ -180,6 +182,21 @@ namespace Panaro
             }
 
             txtboxtotal.Text += Convert.ToString(total);
+
+            //Camadas.Model.Produtos produto = new Camadas.Model.Produtos();
+            //Camadas.DAL.Produtos dalPro = new Camadas.DAL.Produtos();
+
+            //txtboxcomqtd.Text = Convert.ToString(produto.quantidade);
+            //int soma = Convert.ToInt32(txtboxcomqtd.Text);
+            //soma++;
+            //txtboxprodqtd.Text = Convert.ToString(soma);
+            //produto.id = Convert.ToInt32(txtboxcomdesc.Text);
+            //produto.quantidade = Convert.ToInt32(txtboxprodqtd.Text);
+            //produto.valor = txtboxcomvalor.Text;
+            //dalPro.Update(produto);
+
+            //dgvprod.DataSource = "";
+            //dgvprod.DataSource = dalPro.Select();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -191,6 +208,7 @@ namespace Panaro
             venda.valor = txtboxprodvalor.Text;
 
             dalVen.Insert(venda);
+
 
             Camadas.Model.Produtos produto = new Camadas.Model.Produtos();
             Camadas.DAL.Produtos dalPro = new Camadas.DAL.Produtos();
@@ -204,6 +222,7 @@ namespace Panaro
             dalPro.Update(produto);
 
             dgvprod.DataSource = "";
+            dgvprod.DataSource = dalPro.Select();
 
             txtboxprodid.Text = ("");
             txtboxproddesc.Text = ("");
