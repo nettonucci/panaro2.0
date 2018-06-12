@@ -169,6 +169,7 @@
             this.pnlpesquisa.Name = "pnlpesquisa";
             this.pnlpesquisa.Size = new System.Drawing.Size(216, 181);
             this.pnlpesquisa.TabIndex = 12;
+            this.pnlpesquisa.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlpesquisa_Paint);
             // 
             // btnbuscar
             // 

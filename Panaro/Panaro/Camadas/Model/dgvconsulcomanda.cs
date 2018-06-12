@@ -10,7 +10,6 @@ namespace Panaro.Camadas.Model
     {
         public int id { get; set; }
         public string nome { get; set; }
-        //public int id_cliente { get; set; }
         public string status { get; set; }
     }
 }
