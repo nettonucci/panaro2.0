@@ -25,7 +25,7 @@ namespace Panaro
             dgvClientes.DataSource = dalCli.Select();
             rdbtodos_CheckedChanged(null, null);
             txtboxid.Visible = false;
-
+            dgvClientes.Columns["datacad"].Visible = false;
 
         }
 

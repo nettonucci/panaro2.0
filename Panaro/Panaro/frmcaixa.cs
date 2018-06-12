@@ -19,9 +19,9 @@ namespace Panaro
 
         private void frmcaixa_Load(object sender, EventArgs e)
         {
-            Camadas.DAL.Caixa dalCai = new Camadas.DAL.Caixa();
-            dgvcaixa.DataSource = "";
-            dgvcaixa.DataSource = dalCai.Select();
+            // TODO: esta linha de código carrega dados na tabela 'panaroDataSet18.caixa'. Você pode movê-la ou removê-la conforme necessário.
+            this.caixaTableAdapter.Fill(this.panaroDataSet18.caixa);
+
         }
 
         private void button1_Click(object sender, EventArgs e)

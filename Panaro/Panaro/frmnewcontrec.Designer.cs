@@ -31,22 +31,33 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmnewcontrec));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtboxdesc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtboxvalor = new System.Windows.Forms.TextBox();
+            this.datavenc = new System.Windows.Forms.DateTimePicker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dataabert = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvcontas = new System.Windows.Forms.DataGridView();
+            this.panaroDataSet16 = new Panaro.panaroDataSet16();
+            this.contasreceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contasreceberTableAdapter = new Panaro.panaroDataSet16TableAdapters.contasreceberTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataabertDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datavencDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcontas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contasreceberBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,12 +70,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Descricao:";
             // 
-            // textBox1
+            // txtboxdesc
             // 
-            this.textBox1.Location = new System.Drawing.Point(168, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(409, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtboxdesc.Location = new System.Drawing.Point(168, 33);
+            this.txtboxdesc.Name = "txtboxdesc";
+            this.txtboxdesc.Size = new System.Drawing.Size(409, 20);
+            this.txtboxdesc.TabIndex = 1;
             // 
             // label2
             // 
@@ -96,26 +107,30 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Valor:";
             // 
-            // textBox2
+            // txtboxvalor
             // 
-            this.textBox2.Location = new System.Drawing.Point(168, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtboxvalor.Location = new System.Drawing.Point(168, 205);
+            this.txtboxvalor.Name = "txtboxvalor";
+            this.txtboxvalor.Size = new System.Drawing.Size(136, 20);
+            this.txtboxvalor.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // datavenc
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(168, 149);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(230, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.datavenc.CustomFormat = "dd-MM-yyyy";
+            this.datavenc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datavenc.Location = new System.Drawing.Point(168, 149);
+            this.datavenc.Name = "datavenc";
+            this.datavenc.Size = new System.Drawing.Size(91, 20);
+            this.datavenc.TabIndex = 6;
             // 
-            // dateTimePicker2
+            // dataabert
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(168, 88);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(230, 20);
-            this.dateTimePicker2.TabIndex = 7;
+            this.dataabert.CustomFormat = "dd-MM-yyyy";
+            this.dataabert.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dataabert.Location = new System.Drawing.Point(168, 88);
+            this.dataabert.Name = "dataabert";
+            this.dataabert.Size = new System.Drawing.Size(91, 20);
+            this.dataabert.TabIndex = 7;
             // 
             // button1
             // 
@@ -140,7 +155,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(404, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(404, 77);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(259, 161);
             this.pictureBox1.TabIndex = 10;
@@ -154,6 +169,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Cadastrar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -164,33 +180,92 @@
             this.button4.Text = "Limpar";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvcontas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 317);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(627, 176);
-            this.dataGridView1.TabIndex = 13;
+            this.dgvcontas.AutoGenerateColumns = false;
+            this.dgvcontas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvcontas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.descricaoDataGridViewTextBoxColumn,
+            this.dataabertDataGridViewTextBoxColumn,
+            this.datavencDataGridViewTextBoxColumn,
+            this.valorDataGridViewTextBoxColumn,
+            this.pagoDataGridViewTextBoxColumn});
+            this.dgvcontas.DataSource = this.contasreceberBindingSource;
+            this.dgvcontas.Location = new System.Drawing.Point(15, 317);
+            this.dgvcontas.Name = "dgvcontas";
+            this.dgvcontas.Size = new System.Drawing.Size(648, 176);
+            this.dgvcontas.TabIndex = 13;
+            // 
+            // panaroDataSet16
+            // 
+            this.panaroDataSet16.DataSetName = "panaroDataSet16";
+            this.panaroDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // contasreceberBindingSource
+            // 
+            this.contasreceberBindingSource.DataMember = "contasreceber";
+            this.contasreceberBindingSource.DataSource = this.panaroDataSet16;
+            // 
+            // contasreceberTableAdapter
+            // 
+            this.contasreceberTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            // 
+            // dataabertDataGridViewTextBoxColumn
+            // 
+            this.dataabertDataGridViewTextBoxColumn.DataPropertyName = "dataabert";
+            this.dataabertDataGridViewTextBoxColumn.HeaderText = "dataabert";
+            this.dataabertDataGridViewTextBoxColumn.Name = "dataabertDataGridViewTextBoxColumn";
+            // 
+            // datavencDataGridViewTextBoxColumn
+            // 
+            this.datavencDataGridViewTextBoxColumn.DataPropertyName = "datavenc";
+            this.datavencDataGridViewTextBoxColumn.HeaderText = "datavenc";
+            this.datavencDataGridViewTextBoxColumn.Name = "datavencDataGridViewTextBoxColumn";
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            // 
+            // pagoDataGridViewTextBoxColumn
+            // 
+            this.pagoDataGridViewTextBoxColumn.DataPropertyName = "pago";
+            this.pagoDataGridViewTextBoxColumn.HeaderText = "pago";
+            this.pagoDataGridViewTextBoxColumn.Name = "pagoDataGridViewTextBoxColumn";
             // 
             // frmnewcontrec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 505);
+            this.ClientSize = new System.Drawing.Size(677, 505);
             this.ControlBox = false;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvcontas);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dataabert);
+            this.Controls.Add(this.datavenc);
+            this.Controls.Add(this.txtboxvalor);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtboxdesc);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmnewcontrec";
@@ -198,7 +273,9 @@
             this.Text = "Contas a Receber";
             this.Load += new System.EventHandler(this.frmnewcontrec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcontas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contasreceberBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,19 +284,28 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtboxdesc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtboxvalor;
+        private System.Windows.Forms.DateTimePicker datavenc;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dataabert;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvcontas;
+        private panaroDataSet16 panaroDataSet16;
+        private System.Windows.Forms.BindingSource contasreceberBindingSource;
+        private panaroDataSet16TableAdapters.contasreceberTableAdapter contasreceberTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataabertDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datavencDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pagoDataGridViewTextBoxColumn;
     }
 }

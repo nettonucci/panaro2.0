@@ -29,12 +29,13 @@ namespace Panaro.Camadas.DAL
                     caixa.cliente = reader["cliente"].ToString();
                     caixa.data = Convert.ToDateTime(reader["data"]);
                     caixa.total = reader["total"].ToString();
+                    caixa.pagamento = reader["pagamento"].ToString();
                     lstCaixa.Add(caixa);
                 }
             }
             catch
             {
-                Console.WriteLine("Erro - Clientes nao localizados");
+                Console.WriteLine("Erro - Caixas nao localizados");
             }
             finally
             {
@@ -48,11 +49,12 @@ namespace Panaro.Camadas.DAL
         {
             SqlConnection conexao = new SqlConnection(strcon);
             string sql = "Insert into caixa values ";
-            sql = sql + " (@cliente, @data, @total);";
+            sql = sql + " (@cliente, @data, @total, @pagamento);";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@cliente", caixa.cliente);
             cmd.Parameters.AddWithValue("@data", caixa.data);
             cmd.Parameters.AddWithValue("@total", caixa.total);
+            cmd.Parameters.AddWithValue("@pagamento", caixa.pagamento);
             conexao.Open();
             try
             {
@@ -60,7 +62,7 @@ namespace Panaro.Camadas.DAL
             }
             catch
             {
-                Console.WriteLine("Deu Erro ao cadastrar o cliente");
+                Console.WriteLine("Deu Erro ao cadastrar o caixa");
             }
             finally
             {

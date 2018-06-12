@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rbsim = new System.Windows.Forms.RadioButton();
-            this.rbnao = new System.Windows.Forms.RadioButton();
+            this.components = new System.ComponentModel.Container();
+            this.rdbsim = new System.Windows.Forms.RadioButton();
+            this.rdbnao = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.datavenc = new System.Windows.Forms.DateTimePicker();
             this.txtboxvalor = new System.Windows.Forms.TextBox();
@@ -46,42 +47,56 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnexcluir = new System.Windows.Forms.Button();
+            this.btnalterar = new System.Windows.Forms.Button();
             this.dgvcontas = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataabert = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datavenc2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contasreceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panaroDataSet17 = new Panaro.panaroDataSet17();
+            this.contasreceberTableAdapter = new Panaro.panaroDataSet17TableAdapters.contasreceberTableAdapter();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtboxid = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.pnlpesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcontas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contasreceberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet17)).BeginInit();
             this.SuspendLayout();
             // 
-            // rbsim
+            // rdbsim
             // 
-            this.rbsim.AutoSize = true;
-            this.rbsim.Location = new System.Drawing.Point(179, 155);
-            this.rbsim.Name = "rbsim";
-            this.rbsim.Size = new System.Drawing.Size(42, 17);
-            this.rbsim.TabIndex = 36;
-            this.rbsim.TabStop = true;
-            this.rbsim.Text = "Sim";
-            this.rbsim.UseVisualStyleBackColor = true;
+            this.rdbsim.AutoSize = true;
+            this.rdbsim.Location = new System.Drawing.Point(207, 139);
+            this.rdbsim.Name = "rdbsim";
+            this.rdbsim.Size = new System.Drawing.Size(42, 17);
+            this.rdbsim.TabIndex = 36;
+            this.rdbsim.TabStop = true;
+            this.rdbsim.Text = "Sim";
+            this.rdbsim.UseVisualStyleBackColor = true;
             // 
-            // rbnao
+            // rdbnao
             // 
-            this.rbnao.AutoSize = true;
-            this.rbnao.Location = new System.Drawing.Point(128, 157);
-            this.rbnao.Name = "rbnao";
-            this.rbnao.Size = new System.Drawing.Size(45, 17);
-            this.rbnao.TabIndex = 35;
-            this.rbnao.TabStop = true;
-            this.rbnao.Text = "Nao";
-            this.rbnao.UseVisualStyleBackColor = true;
-            this.rbnao.CheckedChanged += new System.EventHandler(this.rbnao_CheckedChanged);
+            this.rdbnao.AutoSize = true;
+            this.rdbnao.Location = new System.Drawing.Point(156, 139);
+            this.rdbnao.Name = "rdbnao";
+            this.rdbnao.Size = new System.Drawing.Size(45, 17);
+            this.rdbnao.TabIndex = 35;
+            this.rdbnao.TabStop = true;
+            this.rdbnao.Text = "Nao";
+            this.rdbnao.UseVisualStyleBackColor = true;
+            this.rdbnao.CheckedChanged += new System.EventHandler(this.rbnao_CheckedChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(78, 157);
+            this.label4.Location = new System.Drawing.Point(106, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 15);
             this.label4.TabIndex = 34;
@@ -108,7 +123,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(68, 105);
+            this.label3.Location = new System.Drawing.Point(106, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 15);
             this.label3.TabIndex = 31;
@@ -128,7 +143,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 35);
+            this.label1.Location = new System.Drawing.Point(75, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 15);
             this.label1.TabIndex = 29;
@@ -224,7 +239,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(220, 186);
+            this.button3.Location = new System.Drawing.Point(207, 179);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 46;
@@ -232,47 +247,133 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnexcluir
             // 
-            this.button2.Location = new System.Drawing.Point(139, 186);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Excluir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnexcluir.Location = new System.Drawing.Point(126, 179);
+            this.btnexcluir.Name = "btnexcluir";
+            this.btnexcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnexcluir.TabIndex = 45;
+            this.btnexcluir.Text = "Excluir";
+            this.btnexcluir.UseVisualStyleBackColor = true;
+            this.btnexcluir.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button4
+            // btnalterar
             // 
-            this.button4.Location = new System.Drawing.Point(58, 186);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 44;
-            this.button4.Text = "Alterar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnalterar.Location = new System.Drawing.Point(45, 179);
+            this.btnalterar.Name = "btnalterar";
+            this.btnalterar.Size = new System.Drawing.Size(75, 23);
+            this.btnalterar.TabIndex = 44;
+            this.btnalterar.Text = "Alterar";
+            this.btnalterar.UseVisualStyleBackColor = true;
+            this.btnalterar.Click += new System.EventHandler(this.button4_Click);
             // 
             // dgvcontas
             // 
+            this.dgvcontas.AutoGenerateColumns = false;
             this.dgvcontas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvcontas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.descricao,
+            this.dataabert,
+            this.datavenc2,
+            this.valor,
+            this.pago});
+            this.dgvcontas.DataSource = this.contasreceberBindingSource;
             this.dgvcontas.Location = new System.Drawing.Point(44, 224);
             this.dgvcontas.Name = "dgvcontas";
-            this.dgvcontas.Size = new System.Drawing.Size(655, 209);
+            this.dgvcontas.Size = new System.Drawing.Size(643, 209);
             this.dgvcontas.TabIndex = 47;
+            this.dgvcontas.DoubleClick += new System.EventHandler(this.dgvcontas_DoubleClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // descricao
+            // 
+            this.descricao.DataPropertyName = "descricao";
+            this.descricao.HeaderText = "descricao";
+            this.descricao.Name = "descricao";
+            // 
+            // dataabert
+            // 
+            this.dataabert.DataPropertyName = "dataabert";
+            this.dataabert.HeaderText = "dataabert";
+            this.dataabert.Name = "dataabert";
+            // 
+            // datavenc2
+            // 
+            this.datavenc2.DataPropertyName = "datavenc";
+            this.datavenc2.HeaderText = "datavenc";
+            this.datavenc2.Name = "datavenc2";
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "valor";
+            this.valor.HeaderText = "valor";
+            this.valor.Name = "valor";
+            // 
+            // pago
+            // 
+            this.pago.DataPropertyName = "pago";
+            this.pago.HeaderText = "pago";
+            this.pago.Name = "pago";
+            // 
+            // contasreceberBindingSource
+            // 
+            this.contasreceberBindingSource.DataMember = "contasreceber";
+            this.contasreceberBindingSource.DataSource = this.panaroDataSet17;
+            // 
+            // panaroDataSet17
+            // 
+            this.panaroDataSet17.DataSetName = "panaroDataSet17";
+            this.panaroDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // contasreceberTableAdapter
+            // 
+            this.contasreceberTableAdapter.ClearBeforeFill = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(42, 208);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(260, 13);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Selecione uma conta abaixo para ediçao ou exclusao";
+            // 
+            // txtboxid
+            // 
+            this.txtboxid.Location = new System.Drawing.Point(156, 8);
+            this.txtboxid.Name = "txtboxid";
+            this.txtboxid.Size = new System.Drawing.Size(45, 20);
+            this.txtboxid.TabIndex = 49;
+            this.txtboxid.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmedcontrec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 482);
+            this.ClientSize = new System.Drawing.Size(732, 444);
             this.ControlBox = false;
+            this.Controls.Add(this.txtboxid);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvcontas);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnexcluir);
+            this.Controls.Add(this.btnalterar);
             this.Controls.Add(this.pnlpesquisa);
-            this.Controls.Add(this.rbsim);
-            this.Controls.Add(this.rbnao);
+            this.Controls.Add(this.rdbsim);
+            this.Controls.Add(this.rdbnao);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.datavenc);
             this.Controls.Add(this.txtboxvalor);
@@ -290,14 +391,16 @@
             this.pnlpesquisa.ResumeLayout(false);
             this.pnlpesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcontas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contasreceberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet17)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.RadioButton rbsim;
-        private System.Windows.Forms.RadioButton rbnao;
+        private System.Windows.Forms.RadioButton rdbsim;
+        private System.Windows.Forms.RadioButton rdbnao;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker datavenc;
         private System.Windows.Forms.TextBox txtboxvalor;
@@ -314,8 +417,20 @@
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label lblPesquisa;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnexcluir;
+        private System.Windows.Forms.Button btnalterar;
         private System.Windows.Forms.DataGridView dgvcontas;
+        private panaroDataSet17 panaroDataSet17;
+        private System.Windows.Forms.BindingSource contasreceberBindingSource;
+        private panaroDataSet17TableAdapters.contasreceberTableAdapter contasreceberTableAdapter;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtboxid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataabert;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datavenc2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pago;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -47,6 +47,12 @@ namespace Panaro
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Camadas.Model.Comanda comanda = new Camadas.Model.Comanda();
+            Camadas.DAL.Comanda dalCom = new Camadas.DAL.Comanda();
+
+            comanda.id = Convert.ToInt32(txtboxid.Text);
+            comanda.status = "2";
+            dalCom.Update(comanda);
             frmedcom frmcom = new frmedcom(txtboxCom.Text, txtboxid.Text);
 
             frmcom.Show();

@@ -174,5 +174,10 @@ namespace Panaro
                 this.Close();
             }
         }
+
+        private void pnlpesquisa_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
