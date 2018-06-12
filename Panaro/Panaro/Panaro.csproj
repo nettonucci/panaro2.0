@@ -139,6 +139,12 @@
     <Compile Include="frmedcontpag.Designer.cs">
       <DependentUpon>frmedcontpag.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmfinalizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmfinalizar.Designer.cs">
+      <DependentUpon>frmfinalizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmnewcom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>panaroDataSet17.xsd</DependentUpon>
     </Compile>
+    <Compile Include="panaroDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaroDataSet18.xsd</DependentUpon>
+    </Compile>
     <Compile Include="panaroDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -407,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmedcontpag.resx">
       <DependentUpon>frmedcontpag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmfinalizar.resx">
+      <DependentUpon>frmfinalizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmnewcom.resx">
       <DependentUpon>frmnewcom.cs</DependentUpon>
@@ -593,6 +607,17 @@
     </None>
     <None Include="panaroDataSet17.xss">
       <DependentUpon>panaroDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="panaroDataSet18.xsc">
+      <DependentUpon>panaroDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="panaroDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaroDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaroDataSet18.xss">
+      <DependentUpon>panaroDataSet18.xsd</DependentUpon>
     </None>
     <None Include="panaroDataSet2.xsc">
       <DependentUpon>panaroDataSet2.xsd</DependentUpon>

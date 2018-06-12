@@ -35,8 +35,6 @@
             this.panaroDataSet5 = new Panaro.panaroDataSet5();
             this.tiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panaroDataSet4 = new Panaro.panaroDataSet4();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtboxnome = new System.Windows.Forms.TextBox();
             this.txtboxid = new System.Windows.Forms.TextBox();
             this.tiposTableAdapter = new Panaro.panaroDataSet4TableAdapters.tiposTableAdapter();
@@ -93,6 +91,8 @@
             this.comanda_produtoTableAdapter = new Panaro.panaroDataSet14TableAdapters.comanda_produtoTableAdapter();
             this.txtboxcomqtd = new System.Windows.Forms.TextBox();
             this.txtboxcomvalor = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).BeginInit();
@@ -149,26 +149,6 @@
             // 
             this.panaroDataSet4.DataSetName = "panaroDataSet4";
             this.panaroDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(761, 397);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "TOTAL:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(822, 648);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Finalizar comanda";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtboxnome
             // 
@@ -623,12 +603,34 @@
             this.txtboxcomvalor.Size = new System.Drawing.Size(84, 20);
             this.txtboxcomvalor.TabIndex = 41;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(831, 648);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(108, 23);
+            this.button4.TabIndex = 42;
+            this.button4.Text = "Finalizar comanda";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(738, 397);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 20);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "TOTAL R$:";
+            // 
             // frmedcom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 683);
             this.ControlBox = false;
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.txtboxcomvalor);
             this.Controls.Add(this.txtboxcomqtd);
             this.Controls.Add(this.txtboxcomidcom);
@@ -656,8 +658,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtboxid);
             this.Controls.Add(this.txtboxnome);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmedcom";
@@ -693,8 +693,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtboxnome;
         private System.Windows.Forms.TextBox txtboxid;
         private panaroDataSet4 panaroDataSet4;
@@ -755,5 +753,7 @@
         private panaroDataSet14TableAdapters.comanda_produtoTableAdapter comanda_produtoTableAdapter;
         private System.Windows.Forms.TextBox txtboxcomqtd;
         private System.Windows.Forms.TextBox txtboxcomvalor;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -40,40 +40,58 @@ namespace Panaro
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja remover a Conta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
 
+                Camadas.Model.Contasreceber contas = new Camadas.Model.Contasreceber();
+                Camadas.DAL.Contasreceber dalCon = new Camadas.DAL.Contasreceber();
+
+                contas.id = Convert.ToInt32(txtboxid.Text);
+
+                dalCon.Delete(contas);
+
+                MessageBox.Show("Conta removida com sucesso", "Alterar contas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtboxdesc.Focus();
+                txtboxdesc.Text = ("");
+                txtboxvalor.Text = ("");
+                txtboxid.Text = ("");
+                rdbnao.Checked = true;
+                datavenc.Value = DateTime.Now;
+                dgvcontas.DataSource = "";
+                dgvcontas.DataSource = dalCon.Select();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja alterar a conta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
-                Camadas.Model.Contaspagar contaspagar = new Camadas.Model.Contaspagar();
-                Camadas.DAL.Contaspagar dalCont = new Camadas.DAL.Contaspagar();
+                Camadas.Model.Contasreceber contas = new Camadas.Model.Contasreceber();
+                Camadas.DAL.Contasreceber dalCon = new Camadas.DAL.Contasreceber();
 
-                contaspagar.id = Convert.ToInt32(txtboxid.Text);
-                contaspagar.descricao = txtboxdesc.Text;
-                contaspagar.data = datavenc.Text;
-                contaspagar.valor = txtboxvalor.Text;
+                contas.id = Convert.ToInt32(txtboxid.Text);
+                contas.valor = txtboxvalor.Text;
                 if (rdbnao.Checked == true)
                 {
-                    contaspagar.pago = "Nao";
+                    contas.pago = "Nao";
                 }
                 else if (rdbsim.Checked == true)
                 {
-                    contaspagar.pago = "Sim";
+                    contas.pago = "Sim";
                 }
 
-                dalCont.Update(contaspagar);
+                dalCon.Update(contas);
 
 
                 MessageBox.Show("Conta alterada com sucesso", "Alterar contas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtboxdesc.Focus();
+                txtboxid.Text = ("");
                 txtboxdesc.Text = ("");
                 txtboxvalor.Text = ("");
-                rbnao.Checked = true;
+                rdbnao.Checked = true;
                 datavenc.Value = DateTime.Now;
                 dgvcontas.DataSource = "";
-                dgvcontas.DataSource = dalCont.Select();
+                dgvcontas.DataSource = dalCon.Select();
             }
         }
 
@@ -93,6 +111,20 @@ namespace Panaro
             txtboxdesc.Text = dgvcontas.SelectedRows[0].Cells["descricao"].Value.ToString();
             datavenc.Text = dgvcontas.SelectedRows[0].Cells["datavenc2"].Value.ToString();
             txtboxvalor.Text = dgvcontas.SelectedRows[0].Cells["valor"].Value.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(txtboxid.Text == "")
+            {
+                btnalterar.Enabled = false;
+                btnexcluir.Enabled = false;
+            }
+            else
+            {
+                btnexcluir.Enabled = true;
+                btnalterar.Enabled = true;
+            }
         }
     }
 }

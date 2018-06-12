@@ -12,6 +12,7 @@ namespace Panaro.Camadas.Model
         public string cliente { get; set; }
         public DateTime data { get; set; }
         public string total { get; set; }
+        public string pagamento { get; set; }
 
     }
 }

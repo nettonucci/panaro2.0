@@ -76,15 +76,11 @@ namespace Panaro.Camadas.DAL
         public void Update(Model.Contasreceber contas)
         {
             SqlConnection conexao = new SqlConnection(strcon);
-            string sql = "Update contasreceber set nome=@nome, endereco=@endereco, numero=@numero, bairro=@bairro, telefone=@telefone, celular=@celular where id=@id;";
+            string sql = "Update contasreceber set valor=@valor, pago=@pago where id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@nome", cliente.nome);
-            cmd.Parameters.AddWithValue("@endereco", cliente.endereco);
-            cmd.Parameters.AddWithValue("@numero", cliente.numero);
-            cmd.Parameters.AddWithValue("@bairro", cliente.bairro);
-            cmd.Parameters.AddWithValue("@telefone", cliente.telefone);
-            cmd.Parameters.AddWithValue("@celular", cliente.celular);
-            cmd.Parameters.AddWithValue("@id", cliente.id);
+            cmd.Parameters.AddWithValue("@valor", contas.valor);
+            cmd.Parameters.AddWithValue("@pago", contas.pago);
+            cmd.Parameters.AddWithValue("@id", contas.id);
             conexao.Open();
             try
             {
@@ -92,7 +88,7 @@ namespace Panaro.Camadas.DAL
             }
             catch
             {
-                Console.WriteLine("Erro na atualizacao de clientes");
+                Console.WriteLine("Erro na atualizacao de contas");
             }
             finally
             {
@@ -100,12 +96,12 @@ namespace Panaro.Camadas.DAL
             }
         }
 
-        public void Delete(Model.Cliente cliente)
+        public void Delete(Model.Contasreceber contas)
         {
             SqlConnection conexao = new SqlConnection(strcon);
-            string sql = "Delete from clientes where id=@id;";
+            string sql = "Delete from contasreceber where id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id", cliente.id);
+            cmd.Parameters.AddWithValue("@id", contas.id);
             conexao.Open();
             try
             {

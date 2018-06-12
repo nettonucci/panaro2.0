@@ -258,3 +258,4 @@ C:\Users\VICCIOLI\Desktop\3BCC\Engenharia de Software\panaro2.0\Panaro\Panaro\ob
 C:\Users\VICCIOLI\Desktop\3BCC\Engenharia de Software\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.pdb
 C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmnewcontrec.resources
 C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmedcontrec.resources
+C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmfinalizar.resources

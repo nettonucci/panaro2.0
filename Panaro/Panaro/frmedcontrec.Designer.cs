@@ -47,25 +47,26 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnexcluir = new System.Windows.Forms.Button();
+            this.btnalterar = new System.Windows.Forms.Button();
             this.dgvcontas = new System.Windows.Forms.DataGridView();
-            this.panaroDataSet17 = new Panaro.panaroDataSet17();
-            this.contasreceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contasreceberTableAdapter = new Panaro.panaroDataSet17TableAdapters.contasreceberTableAdapter();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtboxid = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataabert = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datavenc2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contasreceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panaroDataSet17 = new Panaro.panaroDataSet17();
+            this.contasreceberTableAdapter = new Panaro.panaroDataSet17TableAdapters.contasreceberTableAdapter();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtboxid = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.pnlpesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcontas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasreceberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet17)).BeginInit();
             this.SuspendLayout();
             // 
             // rdbsim
@@ -246,25 +247,25 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnexcluir
             // 
-            this.button2.Location = new System.Drawing.Point(126, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Excluir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnexcluir.Location = new System.Drawing.Point(126, 179);
+            this.btnexcluir.Name = "btnexcluir";
+            this.btnexcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnexcluir.TabIndex = 45;
+            this.btnexcluir.Text = "Excluir";
+            this.btnexcluir.UseVisualStyleBackColor = true;
+            this.btnexcluir.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button4
+            // btnalterar
             // 
-            this.button4.Location = new System.Drawing.Point(45, 179);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 44;
-            this.button4.Text = "Alterar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnalterar.Location = new System.Drawing.Point(45, 179);
+            this.btnalterar.Name = "btnalterar";
+            this.btnalterar.Size = new System.Drawing.Size(75, 23);
+            this.btnalterar.TabIndex = 44;
+            this.btnalterar.Text = "Alterar";
+            this.btnalterar.UseVisualStyleBackColor = true;
+            this.btnalterar.Click += new System.EventHandler(this.button4_Click);
             // 
             // dgvcontas
             // 
@@ -283,37 +284,6 @@
             this.dgvcontas.Size = new System.Drawing.Size(643, 209);
             this.dgvcontas.TabIndex = 47;
             this.dgvcontas.DoubleClick += new System.EventHandler(this.dgvcontas_DoubleClick);
-            // 
-            // panaroDataSet17
-            // 
-            this.panaroDataSet17.DataSetName = "panaroDataSet17";
-            this.panaroDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // contasreceberBindingSource
-            // 
-            this.contasreceberBindingSource.DataMember = "contasreceber";
-            this.contasreceberBindingSource.DataSource = this.panaroDataSet17;
-            // 
-            // contasreceberTableAdapter
-            // 
-            this.contasreceberTableAdapter.ClearBeforeFill = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 208);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(260, 13);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "Selecione uma conta abaixo para ediçao ou exclusao";
-            // 
-            // txtboxid
-            // 
-            this.txtboxid.Location = new System.Drawing.Point(156, 8);
-            this.txtboxid.Name = "txtboxid";
-            this.txtboxid.Size = new System.Drawing.Size(45, 20);
-            this.txtboxid.TabIndex = 49;
-            this.txtboxid.Visible = false;
             // 
             // id
             // 
@@ -352,6 +322,43 @@
             this.pago.HeaderText = "pago";
             this.pago.Name = "pago";
             // 
+            // contasreceberBindingSource
+            // 
+            this.contasreceberBindingSource.DataMember = "contasreceber";
+            this.contasreceberBindingSource.DataSource = this.panaroDataSet17;
+            // 
+            // panaroDataSet17
+            // 
+            this.panaroDataSet17.DataSetName = "panaroDataSet17";
+            this.panaroDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // contasreceberTableAdapter
+            // 
+            this.contasreceberTableAdapter.ClearBeforeFill = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(42, 208);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(260, 13);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Selecione uma conta abaixo para ediçao ou exclusao";
+            // 
+            // txtboxid
+            // 
+            this.txtboxid.Location = new System.Drawing.Point(156, 8);
+            this.txtboxid.Name = "txtboxid";
+            this.txtboxid.Size = new System.Drawing.Size(45, 20);
+            this.txtboxid.TabIndex = 49;
+            this.txtboxid.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmedcontrec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,8 +369,8 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvcontas);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnexcluir);
+            this.Controls.Add(this.btnalterar);
             this.Controls.Add(this.pnlpesquisa);
             this.Controls.Add(this.rdbsim);
             this.Controls.Add(this.rdbnao);
@@ -384,8 +391,8 @@
             this.pnlpesquisa.ResumeLayout(false);
             this.pnlpesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcontas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasreceberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panaroDataSet17)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,8 +417,8 @@
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label lblPesquisa;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnexcluir;
+        private System.Windows.Forms.Button btnalterar;
         private System.Windows.Forms.DataGridView dgvcontas;
         private panaroDataSet17 panaroDataSet17;
         private System.Windows.Forms.BindingSource contasreceberBindingSource;
@@ -424,5 +431,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn datavenc2;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn pago;
+        private System.Windows.Forms.Timer timer1;
     }
 }

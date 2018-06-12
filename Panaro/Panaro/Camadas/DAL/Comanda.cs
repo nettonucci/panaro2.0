@@ -17,7 +17,7 @@ namespace Panaro.Camadas.DAL
         {
             List<Model.dgvconsulcomanda> lstdgv = new List<Model.dgvconsulcomanda>();
             SqlConnection conexao = new SqlConnection(strcon);
-            string sql = "select comandas.id, clientes.nome, status.descricao from comandas inner join status on (status.id=comandas.status) inner join clientes on (clientes.id=comandas.id_cliente) where status=1;";
+            string sql = "select comandas.id, clientes.nome, status.descricao from comandas inner join status on (status.id=comandas.status) inner join clientes on (clientes.id=comandas.id_cliente) where status=1 or status=2;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             conexao.Open();
             try
@@ -27,7 +27,7 @@ namespace Panaro.Camadas.DAL
                 {
                     Model.dgvconsulcomanda dgvconsulcomanda = new Model.dgvconsulcomanda();
                     dgvconsulcomanda.id = Convert.ToInt32(reader["id"]);
-                    dgvconsulcomanda.status = "Aberta";
+                    dgvconsulcomanda.descricao = reader["descricao"].ToString(); ;
                     dgvconsulcomanda.nome = reader["nome"].ToString();
                     lstdgv.Add(dgvconsulcomanda);
 

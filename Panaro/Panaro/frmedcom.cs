@@ -37,7 +37,7 @@ namespace Panaro
             // TODO: esta linha de código carrega dados na tabela 'panaroDataSet14.comanda_produto'. Você pode movê-la ou removê-la conforme necessário.
             this.comanda_produtoTableAdapter.Fill(this.panaroDataSet14.comanda_produto);
             decimal total = 0;
-            txtboxtotal.Text = "R$";
+            txtboxtotal.Text = "";
 
             foreach (DataGridViewRow row in dgvcom.Rows)
             {
@@ -60,7 +60,7 @@ namespace Panaro
             dgvcom.DataSource = lstVenda;
             // TODO: esta linha de código carrega dados na tabela 'panaroDataSet10.produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter1.Fill(this.panaroDataSet10.produtos);
-            txtboxtotal.Text = "R$";
+            txtboxtotal.Text = "";
             Camadas.DAL.Produtos dalPro = new Camadas.DAL.Produtos();
             //dgvcom.DataSource = "";
             //dgvcom.DataSource = dalPro.Select();
@@ -87,7 +87,7 @@ namespace Panaro
                 Camadas.DAL.Comanda dalCom = new Camadas.DAL.Comanda();
 
                 comanda.id = Convert.ToInt32(txtboxid.Text);
-                comanda.status = "2";
+                comanda.status = "3";
 
                 dalCom.Update(comanda);
 
@@ -124,7 +124,7 @@ namespace Panaro
         private void button3_Click(object sender, EventArgs e)
         {
             decimal total = 0;
-            txtboxtotal.Text = "R$";
+            txtboxtotal.Text = "";
 
             foreach (DataGridViewRow row in dgvcom.Rows)
             {
@@ -200,7 +200,7 @@ namespace Panaro
             dgvcom.DataSource = lstVenda;
 
             decimal total = 0;
-            txtboxtotal.Text = "R$";
+            txtboxtotal.Text = "";
 
             foreach (DataGridViewRow row in dgvcom.Rows)
             {
@@ -267,7 +267,7 @@ namespace Panaro
                 dgvcom.DataSource = lstVenda;
 
                 decimal total = 0;
-                txtboxtotal.Text = "R$";
+                txtboxtotal.Text = "";
 
                 foreach (DataGridViewRow row in dgvcom.Rows)
                 {
@@ -376,6 +376,24 @@ namespace Panaro
             dgvprod.DataSource = "";
             dgvprod.DataSource = lstProduto;
             txtPesquisa.Text = "";
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            txtboxtotal.Text = "";
+            decimal total = 0;
+
+            foreach (DataGridViewRow row in dgvcom.Rows)
+            {
+                total += Convert.ToDecimal(row.Cells["valor"].Value);
+            }
+
+            txtboxtotal.Text += Convert.ToString(total);
+
+            frmfinalizar frmfinal = new frmfinalizar(txtboxid.Text, txtboxnome.Text, txtboxtotal.Text);
+            frmfinal.Show();
+            
+
         }
     }
 }
