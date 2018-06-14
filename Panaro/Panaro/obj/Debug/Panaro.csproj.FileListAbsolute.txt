@@ -262,3 +262,4 @@ C:\Users\VICCIOLI\Desktop\3BCC\Engenharia de Software\panaro2.0\Panaro\Panaro\ob
 =======
 C:\Users\Netto\Desktop\panaro2018\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmfinalizar.resources
 >>>>>>> 98ed75d863d2db47a7d14d6484e98f42f3b20831
+C:\Users\VICCIOLI\Desktop\3BCC\Engenharia de Software\panaro2.0\Panaro\Panaro\obj\Debug\Panaro.frmfinalizar.resources
