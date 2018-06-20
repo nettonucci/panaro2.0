@@ -75,7 +75,7 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1600, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1366, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -312,9 +312,9 @@
             this.panel1.Controls.Add(this.monthCalendar1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1378, 24);
+            this.panel1.Location = new System.Drawing.Point(1144, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(222, 854);
+            this.panel1.Size = new System.Drawing.Size(222, 721);
             this.panel1.TabIndex = 7;
             // 
             // fmrinicio
@@ -323,7 +323,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1600, 878);
+            this.ClientSize = new System.Drawing.Size(1366, 745);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
